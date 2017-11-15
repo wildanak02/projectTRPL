@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link href="../assets/panel/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
 
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-  <link href="../assets/panel/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/panel/css/font-awesome.css" rel="stylesheet">
 
-  <link href="../assets/panel/css/style.css" rel="stylesheet">
+  <link href="assets/panel/css/style.css" rel="stylesheet">
 
 
 
@@ -83,21 +83,21 @@
         <ul class="mainnav">
 
           <li>
-            <a href="v_PanelSalesLaporan.php">
+            <a href="?controller=Panel&action=panelSalesLaporan">
               <i class="icon-code"></i>
               <span>Laporan Penjualan</span>
             </a>
           </li>
 
           <li>
-            <a href="v_PanelSalesChart.php">
+            <a href="?controller=Panel&action=panelSalesChart">
               <i class="icon-bar-chart"></i>
               <span>Chart</span>
             </a>
           </li>
 
           <li class="active">
-            <a href="v_PanelSalesPermintaan.php">
+            <a href="?controller=Panel&action=panelSalesPermintaan">
               <i class="icon-code"></i>
               <span>Permintaan</span>
             </a>
@@ -133,6 +133,7 @@
                   <th>Ukuran</th>
                   <th>Supplier</th>
                   <th>Total Terjual</th>
+                  <th>Permintaan</th>
                   <th></th>
                 </tr>
               </thead>
@@ -145,6 +146,7 @@
                   <td>L</td>
                   <td>Supplier A</td>
                   <td>0</td>
+                  <td>50</td>
                   <td><a data-target="#mintaModal" data-toggle="modal" role="button" class="btn btn-primary">Minta</a> </td>
                 </tr>
                 <tr>
@@ -155,6 +157,7 @@
                   <td>L</td>
                   <td>Supplier A</td>
                   <td>0</td>
+                  <td>50</td>
                   <td><a data-target="#mintaModal" data-toggle="modal" role="button" class="btn btn-primary">Minta</a> </td>
                 </tr>
                 <tr>
@@ -165,6 +168,7 @@
                   <td>L</td>
                   <td>Supplier A</td>
                   <td>0</td>
+                  <td>50</td>
                   <td><a data-target="#mintaModal" data-toggle="modal" role="button" class="btn btn-primary">Minta</a> </td>
                 </tr>
               </tbody>
@@ -267,10 +271,10 @@
 
 
 
-<script src="../assets/panel/js/jquery-1.7.2.min.js"></script>
+<script src="assets/panel/js/jquery-1.7.2.min.js"></script>
 
-<script src="../assets/panel/js/bootstrap.js"></script>
-<script src="../assets/panel/js/base.js"></script>
+<script src="assets/panel/js/bootstrap.js"></script>
+<script src="assets/panel/js/base.js"></script>
 
 
 </body>

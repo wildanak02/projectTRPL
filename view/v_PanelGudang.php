@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link href="../assets/panel/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
 
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-  <link href="../assets/panel/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/panel/css/font-awesome.css" rel="stylesheet">
 
-  <link href="../assets/panel/css/style.css" rel="stylesheet">
+  <link href="assets/panel/css/style.css" rel="stylesheet">
 
 
 
@@ -83,7 +83,7 @@
         <ul class="mainnav">
 
           <li class="active">
-            <a href="v_PanelGudang.php">
+            <a href="?controller=Panel&action=panelGudang">
               <i class="icon-user"></i>
               <span>Data Barang</span>
             </a>
@@ -125,42 +125,22 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>baju ini keren sekali</td>
-                  <td>80</td>
-                  <td>Supplier A</td>
-                  <td><a data-target="#editbarangModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                  <td><a data-target="#hapusbarangModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
-                </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>baju ini keren sekali</td>
-                  <td>80</td>
-                  <td>Supplier A</td>
-                  <td><a data-target="#editbarangModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                  <td><a data-target="#hapusbarangModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
-                </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>baju ini keren sekali</td>
-                  <td>80</td>
-                  <td>Supplier A</td>
-                  <td><a data-target="#editbarangModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                  <td><a data-target="#hapusbarangModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
-                </tr>
+                <?php while ($databarang = mysqli_fetch_array ($table)){
+                  $id = $databarang["idBarang"];
+                  echo '
+                  <tr>
+                  <td>'.$databarang["kodeBarang"].'</td>
+                  <td class="logo_img"><img src=""'.$databarang["gambar"].'"></td>
+                  <td>'.$databarang["namaBarang"].'</td>
+                  <td>'.$databarang["jenisBarang"].'</td>
+                  <td>'.$databarang["ukuran"].'</td>
+                  <td>'.$databarang["deskripsi"].'</td>
+                  <td>'.$databarang["stok"].'</td>
+                  <td>'.$databarang["namaSupplier"].'</td>
+                  <td><a data-target="#edituserModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
+                  <td><a data-target="#hapususerModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
+                  </tr>';
+                }?>
               </tbody>
             </table>
 
@@ -176,10 +156,10 @@
                 <div class="modal-content">
                   <div class="modal-body">
                     <!-- form start -->
-                    <form role="form">
+                    <form role="form" method="post" action="?controller=PanelGudang&action=simpan">
                       <div class="form-group">
                         <div class="table-responsive">
-                          <table class="table">
+                          <table class="table" >
                             <tr>
                               <td>Kode Barang : </td>
                               <td><input type="text" name="kodeBarang"></td>
@@ -207,26 +187,30 @@
                             </tr>
                             <tr>
                               <td>Deskripsi Barang : </td>
-                              <td><input type="text" name="deskripsiBarang"></td>
+                              <td><input type="text" name="deskripsi"></td>
                             </tr>
                             <tr>
                               <td>Stok : </td>
-                              <td><input type="number" name="jenisBarang"></td>
+                              <td><input type="number" name="stok"></td>
                             </tr>
                             <tr>
                               <td>Supplier : </td>
-                              <td><select class="form-control" id="supplier">
-                                <option>Supplier A</option>
-                                <option>Supplier B</option>
-                                <option>Supplier C</option>
-                                <option>Supplier D</option>
-                              </select></td>
+                              <td><select class="form-control" id="idSupplier">
+                              <?php while ($datasupplier = mysqli_fetch_array ($supplier)){
+                                echo '
+
+                                <option value='.$datasupplier["idSupplier"].'>'.$datasupplier["namaSupplier"].'</option>
+
+                              ';
+                            }?>
+                            </select></td>
                             </tr>
                           </table>
                         </div>
+                        <button name="simpan" type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                       </form>
-                      <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+
                       <!-- form end -->
                     </div>
                 </div>
@@ -352,10 +336,10 @@
 
 
 
-<script src="../assets/panel/js/jquery-1.7.2.min.js"></script>
+<script src="assets/panel/js/jquery-1.7.2.min.js"></script>
 
-<script src="../assets/panel/js/bootstrap.js"></script>
-<script src="../assets/panel/js/base.js"></script>
+<script src="assets/panel/js/bootstrap.js"></script>
+<script src="assets/panel/js/base.js"></script>
 
 
 </body>

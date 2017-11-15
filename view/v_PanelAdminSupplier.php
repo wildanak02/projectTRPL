@@ -83,25 +83,19 @@
         <ul class="mainnav">
 
           <li>
-            <a href="?controller=Panel&action=panelSalesLaporan">
-              <i class="icon-code"></i>
-              <span>Laporan Penjualan</span>
+            <a href="?controller=PanelAdminUser&action=home">
+              <i class="icon-user"></i>
+              <span>User</span>
             </a>
           </li>
 
           <li class="active">
-            <a hhref="?controller=Panel&action=panelSalesChart">
+            <a href="?controller=PanelAdminSupplier&action=home">
               <i class="icon-bar-chart"></i>
-              <span>Chart</span>
+              <span>Supplier</span>
             </a>
           </li>
 
-          <li>
-            <a href="?controller=Panel&action=panelSalesPermintaan">
-              <i class="icon-code"></i>
-              <span>Permintaan</span>
-            </a>
-          </li>
 
 
         </ul>
@@ -114,66 +108,61 @@
 
 
 
-      <div class="container">
+  <div class="container">
 
-        <div class="row">
+    <div class="row">
 
-          <div class="span12">
+      <div class="span12">
 
-            <div class="widget ">
-
-
-              <div class="widget-content">
-                <div class="widget-content">
-              <canvas id="bar-chart" class="chart-holder" width="538" height="250">
-              </canvas>
-              <!-- /bar-chart -->
-          </div>
-
-              </div> <!-- /widget-content -->
-
-            </div> <!-- /widget -->
-
-          </div> <!-- /span8 -->
+        <div class="widget ">
 
 
+          <div class="widget-content">
+            <table class="table table-condensed">
+              <a href="?controller=ModalAdmin&action=modalAdminSupplierTambah" data-target="#tambahsupplierModal" data-toggle="modal" role="button" class="btn btn-success">Tambah Data</a>
+              <thead>
+                <tr>
+                  <th>Nama Supplier</th>
+                  <th>Alamat</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($posts as $post) {?>
+                <tr>
+                  <td><?php echo $post->namaSupplier; ?></td>
+                  <td><?php echo $post->alamat; ?></td>
+                  <td><a href="?controller=ModalAdmin&action=modalAdminSupplierEdit" data-target="#editsupplierModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
+                  <td><a href="?controller=ModalAdmin&action=modalAdminSupplierHapus" data-target="#hapussupplierModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
+                </tr>
+                <?php }?>
+              </tbody>
+            </table>
+
+          </div> <!-- /widget-content -->
+
+        </div> <!-- /widget -->
+
+      </div> <!-- /span8 -->
 
 
-        </div> <!-- /row -->
-
-      </div> <!-- /container -->
 
 
+    </div> <!-- /row -->
+
+  </div> <!-- /container -->
 
 
 
-      <script src="assets/panel/js/jquery-1.7.2.min.js"></script>
-      <script src="assets/panel/js/excanvas.min.js"></script>
-      <script src="assets/panel/js/chart.min.js" type="text/javascript"></script>
-      <script src="assets/panel/js/bootstrap.js"></script>
-      <script src="assets/panel/js/base.js"></script>
-      <script>
-      var barChartData = {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [
-      {
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,1)",
-          data: [65, 59, 90, 81, 56, 55, 40]
-      },
-      {
-          fillColor: "rgba(151,187,205,0.5)",
-          strokeColor: "rgba(151,187,205,1)",
-          data: [28, 48, 40, 19, 96, 27, 100]
-      }
-    ]
-
-      }
-
-var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
-      </script>
 
 
-        </body>
+  <script src="assets/panel/js/jquery-1.7.2.min.js"></script>
 
-        </html>
+  <script src="assets/panel/js/bootstrap.js"></script>
+  <script src="assets/panel/js/base.js"></script>
+
+
+</body>
+
+</html>

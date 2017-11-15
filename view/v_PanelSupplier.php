@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link href="../assets/panel/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
 
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-  <link href="../assets/panel/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/panel/css/font-awesome.css" rel="stylesheet">
 
-  <link href="../assets/panel/css/style.css" rel="stylesheet">
+  <link href="assets/panel/css/style.css" rel="stylesheet">
 
 
 
@@ -83,7 +83,7 @@
         <ul class="mainnav">
 
           <li class="active">
-            <a href="v_PanelSupplierPermintaan.php">
+            <a href="?controller=Panel&action=panelSupplier">
               <i class="icon-code"></i>
               <span>Permintaan</span>
             </a>

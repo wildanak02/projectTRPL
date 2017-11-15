@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link href="../assets/panel/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="assets/panel/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
+  <link href="assets/panel/css/bootstrap-responsive.min.css" rel="stylesheet" type='text/css'>
 
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
-  <link href="../assets/panel/css/font-awesome.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type='text/css'>
+  <link href="assets/panel/css/font-awesome.css" rel="stylesheet" type='text/css'>
 
-  <link href="../assets/panel/css/style.css" rel="stylesheet">
+  <link href="assets/panel/css/style.css" rel="stylesheet" type='text/css'>
 
 
 
@@ -83,7 +83,7 @@
         <ul class="mainnav">
 
           <li class="active">
-            <a href="v_PanelHRD.php">
+            <a href="?controller=PanelHRD&action=home">
               <i class="icon-user"></i>
               <span>Karyawan</span>
             </a>
@@ -121,31 +121,23 @@
                 </tr>
               </thead>
               <tbody>
+                <?php foreach ($posts as $post) {
+                  if ($post->jenisKelamin==1){
+                    $post->jenisKelamin='Laki-laki';
+                  }
+                  elseif ($post->jenisKelamin==2){
+                    $post->jenisKelamin='Perempuan';
+                  }
+                  ?>
                 <tr>
-                  <td>Wildan</td>
-                  <td>Laki-laki</td>
-                  <td>08-02-1997</td>
-                  <td>Manager</td>
+                  <td><?php echo $post->namaKaryawan; ?></td>
+                  <td><?php echo $post->jenisKelamin; ?></td>
+                  <td><?php echo $post->tanggalLahir; ?></td>
+                  <td><?php echo $post->jabatan; ?></td>
                   <td><a data-target="#editkaryawanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
                   <td><a data-target="#hapuskaryawanModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
                 </tr>
-                <tr>
-                  <tr>
-                    <td>Wildan</td>
-                    <td>Laki-laki</td>
-                    <td>08-02-1997</td>
-                    <td>Manager</td>
-                    <td><a data-target="#editkaryawanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                    <td><a data-target="#hapuskaryawanModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
-                  </tr>
-                  <tr>
-                    <td>Wildan</td>
-                    <td>Laki-laki</td>
-                    <td>08-02-1997</td>
-                    <td>Manager</td>
-                    <td><a data-target="#editkaryawanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                    <td><a data-target="#hapuskaryawanModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
-                  </tr>
+                <?php }?>
               </tbody>
             </table>
 
@@ -296,10 +288,10 @@
 
 
 
-<script src="../assets/panel/js/jquery-1.7.2.min.js"></script>
+<script src="assets/panel/js/jquery-1.7.2.min.js"></script>
 
-<script src="../assets/panel/js/bootstrap.js"></script>
-<script src="../assets/panel/js/base.js"></script>
+<script src="assets/panel/js/bootstrap.js"></script>
+<script src="assets/panel/js/base.js"></script>
 
 
 </body>
