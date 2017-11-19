@@ -62,10 +62,21 @@ class HRD
   		return $list;
   }
 
+  public static function editKaryawan($idKaryawan,$namaKaryawan,$jenisKelamin,$tanggalLahir,$jabatan)
+	{
+		$stat = "";
+		$ts=0;
+
+		$db = DB::getInstance();
+
+		$req = $db->query("UPDATE karyawan SET namaKaryawan='".$namaKaryawan."', jenisKelamin='".$jenisKelamin."',tanggalLahir='".$tanggalLahir."',jabatan='".$jabatan."' WHERE idKaryawan='$idKaryawan'");
+		return $req;
+	}
+
   public static function hapus($idKaryawan){
     $db = DB::getInstance();
 
-    $req = $db->query("DELETE from karyawan where idUser ='$idKaryawan'");
+    $req = $db->query("DELETE from karyawan where idKaryawan ='$idKaryawan'");
 
 
       return $req;

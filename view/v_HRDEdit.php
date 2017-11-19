@@ -102,41 +102,48 @@
 
           <div class="widget-content">
             <form role="form">
-              <input class="hidden" name="controller" value="PanelAdminUser"></input>
-            <input class="hidden" name="action" value="editUser"></input>
+              <input class="hidden" name="controller" value="PanelHRD"></input>
+            <input class="hidden" name="action" value="editKaryawan"></input>
               <div class="form-group">
                 <div class="table-responsive">
                   <table class="table">
                     <?php foreach ($posts as $post) {
                       ?>
-                      <input type="hidden" name="idUser" value="<?php echo $post->idUser; ?>">
+                      <input type="hidden" name="idKaryawan" value="<?php echo $post->idKaryawan; ?>">
                     <tr>
-                      <td>Username </td>
-                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->username; ?>" type="text" name="username"></td>
+                      <td>Nama Karyawan </td>
+                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->namaKaryawan; ?>" type="text" name="namaKaryawan"></td>
                     </tr>
                     <tr>
-                      <td>Password</td>
-                      <td>:&nbsp;&nbsp;&nbsp;<input <?php echo $post->password; ?> type="password" name="password"></td>
+                      <td>jenisKelamin</td>
+                      <td>:&nbsp;&nbsp;&nbsp;<select class="form-control" name="jenisKelamin" id="userLevel">
+                        <option value="1" <?php if($post->jenisKelamin==1){ echo 'selected';} ?>>Laki-laki</option>
+                        <option value="2" <?php if($post->jenisKelamin==2){ echo 'selected';} ?>>Perempuan</option>
+                      </select></td>
                     </tr>
                     <tr>
-                      <td>Avatar</td>
-                      <td>:&nbsp;&nbsp;&nbsp;<img src="images/<?php echo $post->avatar; ?>" height="50" width="50"></td>
+                      <td>Tanggal Lahir</td>
+                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->tanggalLahir; ?>" type="date" name="tanggalLahir"></td>
                     </tr>
                     <tr>
-                      <td>Level</td>
-                      <td>:&nbsp;&nbsp;&nbsp;<select class="form-control" name="level" id="userLevel">
-                        <option value="1" <?php if($post->level==1){ echo 'selected';} ?>>Admin</option>
-                        <option value="2" <?php if($post->level==2){ echo 'selected';} ?>>HRD</option>
-                        <option value="3" <?php if($post->level==3){ echo 'selected';} ?>>Sales</option>
-                        <option value="4" <?php if($post->level==4){ echo 'selected';} ?>>Gudang</option>
+                      <td>Jabatan</td>
+                      <td>:&nbsp;&nbsp;&nbsp;<select class="form-control" name="jabatan">
+                        <option value="1" <?php if($post->jabatan==1){ echo 'selected';} ?>>Manajer</option>
+                        <option value="2" <?php if($post->jabatan==2){ echo 'selected';} ?>>Divisi Penjualan</option>
+                        <option value="3" <?php if($post->jabatan==3){ echo 'selected';} ?>>Divisi Gudang</option>
+                        <option value="4" <?php if($post->jabatan==4){ echo 'selected';} ?>>HRD</option>
+                        <option value="4" <?php if($post->jabatan==5){ echo 'selected';} ?>>Divisi IT</option>
+                        <option value="4" <?php if($post->jabatan==6){ echo 'selected';} ?>>Penjaga</option>
+                        <option value="4" <?php if($post->jabatan==7){ echo 'selected';} ?>>Divisi Pemasaran</option>
+                        <option value="4" <?php if($post->jabatan==8){ echo 'selected';} ?>>Magang</option>
                       </select></td>
                     </tr>
                     <?php }?>
                   </table>
                 </div>
               </div>
-                <button type="submit" class="btn btn-success" >Simpan</button>
-                <button href="?controller=PanelAdminUser&action=home" class="btn btn-primary" >Batal</button>
+                <button type="submit" class="btn btn-success">Simpan</button>
+                <button href="?controller=PanelHRD&action=home" class="btn btn-primary">Batal</button>
               </form>
 
 

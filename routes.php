@@ -53,10 +53,6 @@ function call($controller, $action){
 		require_once('model/m_PanelSupplier.php');
 		break;
 
-		case 'ModalAdminUser':
-		$controller=new ModalAdminUserController();
-		require_once('model/m_PanelAdminUser.php');
-		break;
 	}
 	$controller->{ $action }();
 }
@@ -65,7 +61,7 @@ $controllers = array('Login' => ['login', 'error','authentication'],
 	'Home'=>['home'],
 	'PanelAdminUser'=>['home','klikTambah','klikEdit','tambahUser','editUser','hapusUser'],
 	'PanelAdminSupplier'=>['home','tambahSupplier','editSupplier','hapusSupplier'],
-	'PanelHRD'=>['home','viewKaryawan','tambahKaryawan','editKaryawan','hapusKaryawan'],
+	'PanelHRD'=>['home','klikTambah','klikEdit','tambahKaryawan','editKaryawan','hapusKaryawan'],
 	'PanelSalesLaporan'=>['home','viewLaporan','tambahLaporan','editLaporan'],
 	'PanelSalesChart'=>['home','viewChart'],
 	'PanelSalesPermintaan'=>['home','viewPrediksi','viewPermintaan','minta'],
