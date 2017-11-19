@@ -71,9 +71,6 @@
   </div> <!-- /navbar -->
 
 
-
-
-
   <div class="subnavbar">
 
     <div class="subnavbar-inner">
@@ -81,20 +78,6 @@
       <div class="container">
 
         <ul class="mainnav">
-
-          <li class="active">
-            <a href="?controller=PanelAdminUser&action=home">
-              <i class="icon-user"></i>
-              <span>User</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="?controller=PanelAdminSupplier&action=home">
-              <i class="icon-bar-chart"></i>
-              <span>Supplier</span>
-            </a>
-          </li>
 
 
 
@@ -118,47 +101,39 @@
 
 
           <div class="widget-content">
-            <table class="table table-condensed">
-              <a href="?controller=PanelAdminUser&action=klikTambah"  role="button" class="btn btn-success">Tambah Data</a>
-              <thead>
-                <tr>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>Avatar</th>
-                  <th>Level</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($posts as $post) {
-                  if ($post->level==1){
-                    $post->level='admin';
-                  }
-                  elseif ($post->level==2){
-                    $post->level='HRD';
-                  }
-                  elseif ($post->level==3){
-                    $post->level='Sales';
-                  }
-                  elseif ($post->level==4){
-                    $post->level='Gudang';
-                  }
-                  elseif ($post->level==5){
-                    $post->level='Supplier';
-                  }
-                  ?>
-                  <tr>
-                    <td><?php echo $post->username; ?></td>
-                    <td><?php echo $post->password; ?></td>
-                    <td class="logo_img"><img src="images/<?php echo $post->avatar; ?>" height="40" width="40"></td>
-                    <td><?php echo $post->level; ?></td>
-                    <td><a href="?controller=PanelAdminUser&action=klikEdit&idUser=<?php echo $post->idUser?>" role="button" class="btn btn-primary">Ubah</a> </td>
-                    <td><a href="?controller=PanelAdminUser&action=hapusUser&idUser=<?php echo $post->idUser?>" role="button" class="btn btn-danger">Hapus</a> </td>
-                  </tr>
-                <?php }?>
-              </tbody>
-            </table>
+            <form  role="form" method="POST" enctype="multipart/form-data">
+              <input class="hidden" name="controller" value="PanelAdminUser"></input>
+            <input class="hidden" name="action" value="tambahUser"></input>
+              <div class="form-group">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <td>Username : </td>
+                      <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                      <td>Password : </td>
+                      <td><input type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                      <td>Avatar : </td>
+                      <td><input type="file" name="avatar" accept="image/*"></td>
+                    </tr>
+                    <tr>
+                      <td>Level : </td>
+                      <td><select class="form-control" name="level" id="userLevel">
+                        <option value="1">Admin</option>
+                        <option value="2">HRD</option>
+                        <option value="3">Sales</option>
+                        <option value="4">Gudang</option>
+                      </select></td>
+                    </tr>
+                  </table>
+                </div>
+                </div>
+                <button type="submit" class="btn btn-success" >Simpan</button>
+                <button type="button" class="btn btn-primary" >Batal</button>
+              </form>
 
 
           </div> <!-- /widget-content -->

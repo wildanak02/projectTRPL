@@ -71,9 +71,6 @@
   </div> <!-- /navbar -->
 
 
-
-
-
   <div class="subnavbar">
 
     <div class="subnavbar-inner">
@@ -81,20 +78,6 @@
       <div class="container">
 
         <ul class="mainnav">
-
-          <li class="active">
-            <a href="?controller=PanelAdminUser&action=home">
-              <i class="icon-user"></i>
-              <span>User</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="?controller=PanelAdminSupplier&action=home">
-              <i class="icon-bar-chart"></i>
-              <span>Supplier</span>
-            </a>
-          </li>
 
 
 
@@ -118,47 +101,43 @@
 
 
           <div class="widget-content">
-            <table class="table table-condensed">
-              <a href="?controller=PanelAdminUser&action=klikTambah"  role="button" class="btn btn-success">Tambah Data</a>
-              <thead>
-                <tr>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>Avatar</th>
-                  <th>Level</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($posts as $post) {
-                  if ($post->level==1){
-                    $post->level='admin';
-                  }
-                  elseif ($post->level==2){
-                    $post->level='HRD';
-                  }
-                  elseif ($post->level==3){
-                    $post->level='Sales';
-                  }
-                  elseif ($post->level==4){
-                    $post->level='Gudang';
-                  }
-                  elseif ($post->level==5){
-                    $post->level='Supplier';
-                  }
-                  ?>
-                  <tr>
-                    <td><?php echo $post->username; ?></td>
-                    <td><?php echo $post->password; ?></td>
-                    <td class="logo_img"><img src="images/<?php echo $post->avatar; ?>" height="40" width="40"></td>
-                    <td><?php echo $post->level; ?></td>
-                    <td><a href="?controller=PanelAdminUser&action=klikEdit&idUser=<?php echo $post->idUser?>" role="button" class="btn btn-primary">Ubah</a> </td>
-                    <td><a href="?controller=PanelAdminUser&action=hapusUser&idUser=<?php echo $post->idUser?>" role="button" class="btn btn-danger">Hapus</a> </td>
-                  </tr>
-                <?php }?>
-              </tbody>
-            </table>
+            <form role="form">
+              <input class="hidden" name="controller" value="PanelAdminUser"></input>
+            <input class="hidden" name="action" value="editUser"></input>
+              <div class="form-group">
+                <div class="table-responsive">
+                  <table class="table">
+                    <?php foreach ($posts as $post) {
+                      ?>
+                      <input type="hidden" name="id" value="<?php echo $post->idUser; ?>">
+                    <tr>
+                      <td>Username </td>
+                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->username; ?>" type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                      <td>Password</td>
+                      <td>:&nbsp;&nbsp;&nbsp;<input <?php echo $post->password; ?> type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                      <td>Avatar</td>
+                      <td>:&nbsp;&nbsp;&nbsp;<img src="images/<?php echo $post->avatar; ?>" height="50" width="50"></td>
+                    </tr>
+                    <tr>
+                      <td>Level</td>
+                      <td>:&nbsp;&nbsp;&nbsp;<select class="form-control" name="level" id="userLevel">
+                        <option value="1" <?php if($post->level==1){ echo 'selected';} ?>>Admin</option>
+                        <option value="2" <?php if($post->level==2){ echo 'selected';} ?>>HRD</option>
+                        <option value="3" <?php if($post->level==3){ echo 'selected';} ?>>Sales</option>
+                        <option value="4" <?php if($post->level==4){ echo 'selected';} ?>>Gudang</option>
+                      </select></td>
+                    </tr>
+                    <?php }?>
+                  </table>
+                </div>
+              </div>
+                <button type="submit" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+              </form>
 
 
           </div> <!-- /widget-content -->

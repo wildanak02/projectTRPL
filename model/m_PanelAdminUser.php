@@ -62,6 +62,18 @@ class AdminUser
   		return $list;
   }
 
+
+	public static function edit($idUser,$username,$password,$level)
+	{
+		$stat = "";
+		$ts=0;
+
+		$db = DB::getInstance();
+
+		$req = $db->query("UPDATE user SET username='".$username."', password='".$password."',level='".$level."' WHERE idUser='$idUser'");
+		return $req;
+	}
+
   public static function hapus($idUser){
     $db = DB::getInstance();
 
