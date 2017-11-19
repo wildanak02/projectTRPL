@@ -109,7 +109,7 @@
 
           <div class="widget-content">
             <table class="table table-condensed">
-              <a data-target="#tambahkaryawanModal" data-toggle="modal" role="button" class="btn btn-success">Tambah Data</a>
+              <a href="?controller=PanelHRD&action=klikTambah" role="button" class="btn btn-success">Tambah Data</a>
               <thead>
                 <tr>
                   <th>Nama Karyawan</th>
@@ -128,148 +128,46 @@
                   elseif ($post->jenisKelamin==2){
                     $post->jenisKelamin='Perempuan';
                   }
+                  if ($post->jabatan==1){
+                    $post->jabatan='Manajer';
+                  }
+                  elseif ($post->jabatan==2){
+                    $post->jabatan='Divisi Penjualan';
+                  }
+                  elseif ($post->jabatan==3){
+                    $post->jabatan='Divisi Gudang';
+                  }
+
+                  elseif ($post->jabatan==4){
+                    $post->jabatan='HRD';
+                  }
+                  elseif ($post->jabatan==5){
+                    $post->jabatan='Divisi IT';
+                  }
+                  elseif ($post->jabatan==6){
+                    $post->jabatan='Penjaga';
+                  }
+                  elseif ($post->jabatan==7){
+                    $post->jabatan='Divisi Pemasaran';
+                  }
+                  elseif ($post->jabatan==8){
+                    $post->jabatan='Magang';
+                  }
+
                   ?>
                 <tr>
                   <td><?php echo $post->namaKaryawan; ?></td>
                   <td><?php echo $post->jenisKelamin; ?></td>
                   <td><?php echo $post->tanggalLahir; ?></td>
                   <td><?php echo $post->jabatan; ?></td>
-                  <td><a data-target="#editkaryawanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                  <td><a data-target="#hapuskaryawanModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
+                  <td><a href="?controller=PanelHRD&action=klikEdit&idKaryawan=<?php echo $post->idKaryawan?>" role="button" class="btn btn-primary">Ubah</a> </td>
+                  <td><a href="?controller=PanelHRD&action=hapusKaryawan&idKaryawan=<?php echo $post->idKaryawan?>" role="button" class="btn btn-danger">Hapus</a> </td>
                 </tr>
                 <?php }?>
               </tbody>
             </table>
 
 
-
-            <!-- Tambah data -->
-            <!-- Modal -->
-            <div id="tambahkaryawanModal" data-backdrop="static" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <!-- form start -->
-                    <form role="form">
-                      <div class="form-group">
-                        <div class="table-responsive">
-                          <table class="table">
-                            <tr>
-                              <td>Nama Karyawan : </td>
-                              <td><input type="text" name="namaKaryawan"></td>
-                            </tr>
-                            <tr>
-                              <td>Jenis Kelamin : </td>
-                              <td><select class="form-control" id="jenisKelamin">
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
-                              </select></td>
-                            </tr>
-                            <tr>
-                              <td>Tanggal Lahir : </td>
-                              <td><input type="date" name="tanggaLahirl"></td>
-                            </tr>
-                            <tr>
-                              <td>Jabatan</td>
-                              <td><input type="text" name="jabatan"></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </form>
-                      <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                      <!-- form end -->
-
-
-                    </div>
-
-                  </div>
-
-
-            </div>
-          </div>
-        </div>
-
-        <!-- modal end -->
-
-
-        <!-- Edit data -->
-        <!-- Modal -->
-        <div id="editkaryawanModal" data-backdrop="static" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-body">
-                <!-- form start -->
-                <form role="form">
-                  <div class="form-group">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tr>
-                          <td>Nama Karyawan : </td>
-                          <td><input type="text" name="namaKaryawan"></td>
-                        </tr>
-                        <tr>
-                          <td>Jenis Kelamin : </td>
-                          <td><select class="form-control" id="jenisKelamin">
-                            <option>Laki-laki</option>
-                            <option>Perempuan</option>
-                          </select></td>
-                        </tr>
-                        <tr>
-                          <td>Tanggal Lahir : </td>
-                          <td><input type="date" name="tanggaLahirl"></td>
-                        </tr>
-                        <tr>
-                          <td>Jabatan</td>
-                          <td><input type="text" name="jabatan"></td>
-                        </tr>
-                      </table>
-                    </div>
-                  </form>
-                  <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                  <!-- form end -->
-
-
-                </div>
-
-              </div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <!-- modal end -->
-
-    <!-- hapus -->
-    <!-- Modal -->
-    <div id="hapuskaryawanModal" data-backdrop="static" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-
-          <div class="modal-body">
-            <!-- form start -->
-            Hapus data?
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-          </div>
-          <!-- form end -->
-
-        </div>
-      </div>
-    </div>
 
       </div> <!-- /widget-content -->
 

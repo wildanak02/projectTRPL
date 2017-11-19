@@ -38,7 +38,7 @@ Class PanelAdminUserController{
 		// $fotobaru = $foto;
 		// $path = "images/".$fotobaru;
 		$gantilevel= $_GET["level"];
-		$posts=AdminUser::edit($_GET["id"],$_GET["username"],$_GET["password"],$gantilevel);
+		$posts=AdminUser::editUser($_GET["idUser"],$_GET["username"],$_GET["password"],$gantilevel);
 		header("location:index.php?controller=PanelAdminUser&action=home");
 	}
 

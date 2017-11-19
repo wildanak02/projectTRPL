@@ -132,7 +132,7 @@
                 </div>
                 </div>
                 <button type="submit" class="btn btn-success" >Simpan</button>
-                <button type="button" class="btn btn-primary" >Batal</button>
+                <button href="?controller=PanelAdminUser&action=home" class="btn btn-primary" >Batal</button>
               </form>
 
 
