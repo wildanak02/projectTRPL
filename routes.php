@@ -60,7 +60,7 @@ function call($controller, $action){
 $controllers = array('Login' => ['login', 'error','authentication'],
 	'Home'=>['home'],
 	'PanelAdminUser'=>['home','klikTambah','klikEdit','tambahUser','editUser','hapusUser'],
-	'PanelAdminSupplier'=>['home','tambahSupplier','editSupplier','hapusSupplier'],
+	'PanelAdminSupplier'=>['home','klikTambah','klikEdit','tambahSupplier','editSupplier','hapusSupplier'],
 	'PanelHRD'=>['home','klikTambah','klikEdit','tambahKaryawan','editKaryawan','hapusKaryawan'],
 	'PanelSalesLaporan'=>['home','viewLaporan','tambahLaporan','editLaporan'],
 	'PanelSalesChart'=>['home','viewChart'],
