@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Nava</title>
+      <title>SYAFIA</title>
    </head>
    <body class="home" id="page">
-
       <!-- Header -->
       <header class="main-header">
          <div class="container">
@@ -15,12 +14,6 @@
 
                <nav class="site-nav">
                   <ul class="clean-list site-links">
-                     <li>
-                        <a href="#">Top Destinations</a>
-                     </li>
-                     <li>
-                        <a href="#">Add your boat</a>
-                     </li>
                   </ul>
 
                   <a href="?controller=Login&action=login" class="btn btn-outlined">LOGIN</a>
@@ -36,16 +29,8 @@
             <div class="hero-box">
                <div class="container">
                   <div class="hero-text align-center">
-                     <h1>Reserve a boat now!</h1>
-                     <p>and set your sails into paradise!</p>
+                     <h1>Syafia</h1>
                   </div>
-
-                  <form class="destinations-form">
-                     <div class="input-line">
-                        <input type="text" name="destination" value="" class="form-input check-value" placeholder="WHAT IS YOUR DESTINATION, SAILOR?" />
-                        <button type="button" name="destination-submit" class="form-submit btn btn-special">Find a boat</button>
-                     </div>
-                  </form>
                </div>
             </div>
 
@@ -53,23 +38,17 @@
             <div class="container">
                <div class="statistics-box">
                   <div class="statistics-item">
-                     <span class="value">2,300</span>
-                     <p class="title">Destinations</p>
+                     <span class="value"></span>
+                     <p class="title">Perlengkapan Sholat</p>
                   </div>
 
                   <div class="statistics-item">
-                     <span class="value">1,000</span>
-                     <p class="title">Cities</p>
+                     <span class="value"></span>
+                     <p class="title">Perlengkapan dan oleh-oleh haji</p>
                   </div>
-
                   <div class="statistics-item">
-                     <span class="value">35,000</span>
-                     <p class="title">Boats</p>
-                  </div>
-
-                  <div class="statistics-item">
-                     <span class="value">50,000</span>
-                     <p class="title">Sailors</p>
+                     <span class="value"></span>
+                     <p class="title">Mahar dan hantaran pernikahan</p>
                   </div>
                </div>
             </div>
@@ -80,8 +59,24 @@
             <!-- Title -->
             <div class="section-title">
                <div class="container">
-                  <h2 class="title">Explore our top destinations</h2>
-                  <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                  <h2 class="title">Our Products</h2>
+                  
+                  <!--  foto start -->
+                  <div class="table-responsive">
+                    <table class="table">
+                    <tr>
+                       <td>
+                          <img src="images/kemejaputi.jpg">
+                       </td>
+                        <td>
+                          <img src="../images/kurma.jpg">
+                       </td>
+                    </tr>
+                    </table>
+                  </div>
+                  <!--  foto end -->
+
+
                </div>
             </div>
 
