@@ -14,6 +14,8 @@
 
                <nav class="site-nav">
                   <ul class="clean-list site-links">
+                  <li><a href="#ourproducts"> OUR PRODUCTS</a></li>
+                  <li><a href="#ourteams"> OUR TEAM</a></li>
                   </ul>
 
                   <a href="?controller=Login&action=login" class="btn btn-outlined">LOGIN</a>
@@ -57,25 +59,22 @@
          <!-- Destinations Section -->
          <section class="section section-destination">
             <!-- Title -->
-            <div class="section-title">
+            <div id="ourproducts" class="section-title">
                <div class="container">
-                  <h2 class="title">Our Products</h2>
-                  
+                  <h2 class="title" style="font-weight: bold;">Our Products</h2>
                   <!--  foto start -->
+                  <center>
                   <div class="table-responsive">
                     <table class="table">
                     <tr>
-                       <td>
-                          <img src="images/kemejaputi.jpg">
-                       </td>
-                        <td>
-                          <img src="../images/kurma.jpg">
-                       </td>
+                       <td><img src="assets/home/img/produk/kokomodel.jpg" style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"></td>
+                     <td><img src="assets/home/img/produk/img_3.jpg" style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"></td>
+                     <td><img src="assets/home/img/produk/hijab.jpg" style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;" ></td>
                     </tr>
                     </table>
                   </div>
+                  </center>
                   <!--  foto end -->
-
 
                </div>
             </div>
@@ -238,9 +237,6 @@
                   </div>
                </div>
 
-               <div class="align-center">
-                  <a href="#" class="btn btn-default btn-load-destination"><span class="text">Explore more destinations</span><i class="icon-spinner6"></i></a>
-               </div>
             </div>
          </section>
 
@@ -248,10 +244,8 @@
          <div class="parallax-box">
             <div class="container">
                <div class="text align-center">
-                  <h1>Have your own boat?</h1>
-                  <p>navigare necesse est, vivere non est necesse</p>
-
-                  <a href="#" class="btn btn-special no-icon size-2x">Rent your boat</a>
+                  <h1></h1>
+                  <p></p>
                </div>
             </div>
          </div>
@@ -259,10 +253,25 @@
          <!-- Boats Section -->
          <section class="section section-boats">
             <!-- Title -->
-            <div class="section-title">
-               <div class="container">
-                  <h2 class="title">Featured boats</h2>
-                  <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <div class="section-title" id="ourteams">
+               <div>
+                  <h2 class="title" style="font-weight: bold;">OUR TEAM</h2>
+                  <!-- Nama Kelompok start -->
+                  <center>
+                  <div class="table-responsive">
+                    <table class="table">
+                    <tr align="center">
+                       <td style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"><img src="assets/home/img/anggota/wildan.jpg" class="img-circle"><br>Achmad Wildan A.</td>
+                       <td style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"><img src="assets/home/img/anggota/basir.jpg" class="img-circle"><br>M. Basiruddin</td>
+                       <td style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"><img src="assets/home/img/anggota/faqih.jpg" class="img-circle"><br>Mohammad Faqih</td>
+                       <td style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"><img src="assets/home/img/anggota/ridho.jpg" class="img-circle"><br>Ridho Ardi N.</td>
+                        <td style="padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px; width:300px; height: 400px;"><img src="assets/home/img/anggota/beya.jpg" class="img-circle"><br>Beya Aji B.</td>
+                    </tr>
+                    </table>
+                  </div>
+                  </center>
+
+                                    <!-- Nama Kelompok end -->
                </div>
             </div>
 
@@ -391,81 +400,13 @@
                      </div>
                   </div>
                </div>
-
-               <div class="align-center">
-                  <a href="#" class="btn btn-default btn-load-boats"><span class="text">Load more boats</span><i class="icon-spinner6"></i></a>
-               </div>
             </div>
          </section>
       </div>
 
       <!-- Footer -->
       <footer class="main-footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-5">
-                  <div class="widget widget_links">
-                     <h5 class="widget-title">Top Locations</h5>
-                     <ul>
-                        <li><a href="#">Lorem impsum dolor</a></li>
-                        <li><a href="#">Sit amet consectetur</a></li>
-                        <li><a href="#">Adipisicing elit</a></li>
-                        <li><a href="#">Eiusmod tempor</a></li>
-                        <li><a href="#">incididunt ut labore</a></li>
-                     </ul>
-                  </div>
-               </div>
 
-               <div class="col-md-5">
-                  <div class="widget widget_links">
-                     <h5 class="widget-title">Featured Boats</h5>
-                     <ul>
-                        <li><a href="#">Lorem impsum dolor</a></li>
-                        <li><a href="#">Sit amet consectetur</a></li>
-                        <li><a href="#">Adipisicing elit</a></li>
-                        <li><a href="#">Eiusmod tempor</a></li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-md-9">
-                  <div class="widget widget_social">
-                     <h5 class="widget-title">Subscribe to our newsletter</h5>
-                     <form class="subscribe-form">
-                        <div class="input-line">
-                           <input type="text" name="subscribe-email" value="" placeholder="Your email address" />
-                        </div>
-                        <button type="button" name="subscribe-submit" class="btn btn-special no-icon">Subscribe</button>
-                     </form>
-
-                     <ul class="clean-list social-block">
-                        <li>
-                           <a href="#"><i class="icon-facebook"></i></a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="icon-twitter"></i></a>
-                        </li>
-                        <li>
-                           <a href="#"><i class="icon-google-plus"></i></a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-md-5">
-                  <div class="widget widget_links">
-                     <h5 class="widget-title">Contact us</h5>
-                     <ul>
-                        <li><a href="#">Lorem impsum dolor</a></li>
-                        <li><a href="#">Sit amet consectetur</a></li>
-                        <li><a href="#">Adipisicing elit</a></li>
-                        <li><a href="#">Eiusmod tempor</a></li>
-                        <li><a href="#">incididunt ut labore</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
       </footer>
 
       <!-- Scripts -->
