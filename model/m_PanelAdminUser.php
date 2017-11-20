@@ -63,7 +63,7 @@ class AdminUser
   }
 
 
-	public static function edit($idUser,$username,$password,$level)
+	public static function editUser($idUser,$username,$password,$level)
 	{
 		$stat = "";
 		$ts=0;

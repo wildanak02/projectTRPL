@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
   <meta charset="utf-8">
   <title>Account - Bootstrap Admin Template</title>
 
@@ -71,9 +71,6 @@
   </div> <!-- /navbar -->
 
 
-
-
-
   <div class="subnavbar">
 
     <div class="subnavbar-inner">
@@ -81,20 +78,6 @@
       <div class="container">
 
         <ul class="mainnav">
-
-          <li>
-            <a href="?controller=PanelAdminUser&action=home">
-              <i class="icon-user"></i>
-              <span>User</span>
-            </a>
-          </li>
-
-          <li class="active">
-            <a href="?controller=PanelAdminSupplier&action=home">
-              <i class="icon-bar-chart"></i>
-              <span>Supplier</span>
-            </a>
-          </li>
 
 
 
@@ -118,28 +101,47 @@
 
 
           <div class="widget-content">
-            <table class="table table-condensed">
-              <a href="?controller=PanelAdminSupplier&action=klikTambah" role="button" class="btn btn-success">Tambah Data</a>
-              <thead>
-                <tr>
-                  <th>Nama Supplier</th>
-                  <th>Alamat</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($posts as $post) {?>
-                <tr>
-                  <td><?php echo $post->namaSupplier; ?></td>
-                  <td><?php echo $post->alamat; ?></td>
-                   <td><a href="?controller=PanelAdminSupplier&action=klikEdit&idSupplier=<?php echo $post->idSupplier
-                   ?>" role="button" class="btn btn-primary">Ubah</a> </td>
-                    <td><a href="?controller=PanelAdminSupplier&action=hapusSupplier&idSupplier=<?php echo $post->idSupplier?>" role="button" class="btn btn-danger">Hapus</a> </td>
-                </tr>
-                <?php }?>
-              </tbody>
-            </table>
+            <form  role="form" method="POST" enctype="multipart/form-data">
+              <input class="hidden" name="controller" value="PanelHRD"></input>
+            <input class="hidden" name="action" value="tambahKaryawan"></input>
+              <div class="form-group">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <td>Nama Karyawan : </td>
+                      <td><input type="text" name="namaKaryawan"></td>
+                    </tr>
+                    <tr>
+                      <td>Jenis Kelamin : </td>
+                      <td><select class="form-control" name="jenisKelamin">
+                        <option value="1">Laki-laki</option>
+                        <option value="2">Perempuan</option>
+                      </select></td>
+                    </tr>
+                    <tr>
+                      <td>Tanggal Lahir : </td>
+                      <td><input type="date" name="tanggalLahir"></td>
+                    </tr>
+                    <tr>
+                      <td>Jabatan : </td>
+                      <td><select class="form-control" name="jabatan">
+                        <option value="1">Manajer</option>
+                        <option value="2">Divisi Penjualan</option>
+                        <option value="3">Divisi Gudang</option>
+                        <option value="4">HRD</option>
+                        <option value="5">Divisi IT</option>
+                        <option value="6">Penjaga</option>
+                        <option value="7">Divisi Pemasaran</option>
+                        <option value="8">Magang</option>
+                      </select></td>
+                    </tr>
+                  </table>
+                </div>
+                </div>
+                <button type="submit" class="btn btn-success" >Simpan</button>
+                <button href="?controller=PanelHRD&action=home" class="btn btn-primary" >Batal</button>
+              </form>
+
 
           </div> <!-- /widget-content -->
 
@@ -166,5 +168,5 @@
 
 </body>
 
-</html>
 
+</html>

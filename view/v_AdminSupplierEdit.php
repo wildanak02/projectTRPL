@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
   <meta charset="utf-8">
   <title>Account - Bootstrap Admin Template</title>
 
@@ -71,9 +71,6 @@
   </div> <!-- /navbar -->
 
 
-
-
-
   <div class="subnavbar">
 
     <div class="subnavbar-inner">
@@ -81,20 +78,6 @@
       <div class="container">
 
         <ul class="mainnav">
-
-          <li>
-            <a href="?controller=PanelAdminUser&action=home">
-              <i class="icon-user"></i>
-              <span>User</span>
-            </a>
-          </li>
-
-          <li class="active">
-            <a href="?controller=PanelAdminSupplier&action=home">
-              <i class="icon-bar-chart"></i>
-              <span>Supplier</span>
-            </a>
-          </li>
 
 
 
@@ -118,28 +101,31 @@
 
 
           <div class="widget-content">
-            <table class="table table-condensed">
-              <a href="?controller=PanelAdminSupplier&action=klikTambah" role="button" class="btn btn-success">Tambah Data</a>
-              <thead>
-                <tr>
-                  <th>Nama Supplier</th>
-                  <th>Alamat</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($posts as $post) {?>
-                <tr>
-                  <td><?php echo $post->namaSupplier; ?></td>
-                  <td><?php echo $post->alamat; ?></td>
-                   <td><a href="?controller=PanelAdminSupplier&action=klikEdit&idSupplier=<?php echo $post->idSupplier
-                   ?>" role="button" class="btn btn-primary">Ubah</a> </td>
-                    <td><a href="?controller=PanelAdminSupplier&action=hapusSupplier&idSupplier=<?php echo $post->idSupplier?>" role="button" class="btn btn-danger">Hapus</a> </td>
-                </tr>
-                <?php }?>
-              </tbody>
-            </table>
+            <form role="form">
+              <input class="hidden" name="controller" value="PanelAdminSupplier"></input>
+            <input class="hidden" name="action" value="editSupplier"></input>
+              <div class="form-group">
+                <div class="table-responsive">
+                  <table class="table">
+                    <?php foreach ($posts as $post) {
+                      ?>
+                      <input type="hidden" name="idSupplier" value="<?php echo $post->idSupplier ; ?>">
+                    <tr>
+                      <td>Nama Supplier </td>
+                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->namaSupplier; ?>" type="text" name="namaSupplier"></td>
+                    </tr>
+                    <tr>
+                      <td>Alamat </td>
+                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->alamat; ?>" type="text" name="alamat"></td>
+                    </tr>
+                    <?php }?>
+                  </table>
+                </div>
+              </div>
+                <button type="submit" class="btn btn-success" >Simpan</button>
+                <button href="?controller=PanelAdminSupplier&action=home"class="btn btn-primary" >Batal</button>
+              </form>
+
 
           </div> <!-- /widget-content -->
 
@@ -166,5 +152,5 @@
 
 </body>
 
-</html>
 
+</html>

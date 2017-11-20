@@ -45,16 +45,34 @@ class AdminSupplier
 
 		$db = DB::getInstance();
 
-		$req = $db->query("SELECT * FROM user where idUser='$idUser'");
+		$req = $db->query("SELECT * FROM supplier where idSupplier='$idSupplier'");
     foreach ($req->fetchAll() as $post) {
-  			$list[] = new AdminUser($post['idUser'],$post['username'],$post['password'],$post['avatar'],$post['level']
+  			$list[] = new AdminSupplier($post['idSupplier'],$post['namaSupplier'],$post['alamat']
   				);
   		}
 
 
   		return $list;
   }
+public static function edit($idSupplier,$namaSupplier,$alamat)
+	{
+		$stat = "";
+		$ts=0;
 
+		$db = DB::getInstance();
+
+		$req = $db->query("UPDATE supplier SET namaSupplier='".$namaSupplier."', alamat='".$alamat."' WHERE idSupplier='$idSupplier'");
+		return $req;
+	}
+
+  public static function hapus($idSupplier){
+    $db = DB::getInstance();
+
+    $req = $db->query("DELETE from supplier where idSupplier ='$idSupplier'");
+
+
+      return $req;
+  }
 }
 
 ?>
