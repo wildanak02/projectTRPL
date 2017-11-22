@@ -118,7 +118,7 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-success">Simpan</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+              <button href="?controller=PanelSalesLaporan&action=home" type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
             </form>
 
 
