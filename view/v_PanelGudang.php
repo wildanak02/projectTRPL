@@ -83,7 +83,7 @@
         <ul class="mainnav">
 
           <li class="active">
-            <a href="?controller=Panel&action=panelGudang">
+            <a href="?controller=PanelGudang&action=home">
               <i class="icon-user"></i>
               <span>Data Barang</span>
             </a>
@@ -109,7 +109,7 @@
 
           <div class="widget-content">
             <table class="table table-condensed">
-              <a data-target="#tambahbarangModal" data-toggle="modal" role="button" class="btn btn-success">Tambah Barang Baru</a>
+              <a href="?controller=PanelGudang&action=klikTambah" role="button" class="btn btn-success">Tambah Barang Baru</a>
               <thead>
                 <tr>
                   <th>Kode Barang</th>
@@ -125,214 +125,74 @@
                 </tr>
               </thead>
               <tbody>
-                <?php while ($databarang = mysqli_fetch_array ($table)){
-                  $id = $databarang["idBarang"];
-                  echo '
+
+                <?php foreach ($posts as $post) {
+                  if ($post->idSupplier==1){
+                    $post->idSupplier1='feril';
+                  }
+                  elseif ($post->idSupplier==2){
+                    $post->idSupplier1='Bima';
+                  }
+                  elseif ($post->idSupplier==18){
+                    $post->idSupplier1='Thariq';
+                  }
+                  elseif ($post->idSupplier==19){
+                    $post->idSupplier1='Abbi';
+                  }
+                  elseif ($post->idSupplier==20){
+                    $post->idSupplier1='Juven';
+                  }
+                  elseif ($post->idSupplier==22){
+                    $post->idSupplier1='gilang';
+                  }
+                  elseif ($post->idSupplier==23){
+                    $post->idSupplier1='aye';
+
+                  }
+
+                  if ($post->jenisBarang==1){
+                    $post->jenisBarang='Baju Muslim Laki-Laki';
+                  }
+                  elseif ($post->jenisBarang==2){
+                    $post->jenisBarang='Baju Muslim Wanita';
+                  }
+                  elseif ($post->jenisBarang==3){
+                    $post->jenisBarang='Baju Muslim Anak-Anak';
+                  }
+                  
+
+
+                  
+                  ?>
                   <tr>
-                  <td>'.$databarang["kodeBarang"].'</td>
-                  <td class="logo_img"><img src=""'.$databarang["gambar"].'"></td>
-                  <td>'.$databarang["namaBarang"].'</td>
-                  <td>'.$databarang["jenisBarang"].'</td>
-                  <td>'.$databarang["ukuran"].'</td>
-                  <td>'.$databarang["deskripsi"].'</td>
-                  <td>'.$databarang["stok"].'</td>
-                  <td>'.$databarang["namaSupplier"].'</td>
-                  <td><a data-target="#edituserModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                  <td><a data-target="#hapususerModal" data-toggle="modal" role="button" class="btn btn-danger">Hapus</a> </td>
-                  </tr>';
-                }?>
-              </tbody>
-            </table>
-
-
-
-            <!-- Tambah data -->
-            <!-- Modal -->
-            <div id="tambahbarangModal" data-backdrop="static" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <!-- form start -->
-                    <form role="form" method="post" action="?controller=PanelGudang&action=simpan">
-                      <div class="form-group">
-                        <div class="table-responsive">
-                          <table class="table" >
-                            <tr>
-                              <td>Kode Barang : </td>
-                              <td><input type="text" name="kodeBarang"></td>
-                            </tr>
-                            <tr>
-                              <td>Gambar : </td>
-                              <td><input type="file" name="gambar" accept="image/*"></td>
-                            </tr>
-                            <tr>
-                              <td>Nama Barang : </td>
-                              <td><input type="text" name="namaBarang"></td>
-                            </tr>
-                            <tr>
-                              <td>Jenis Barang : </td>
-                              <td><input type="text" name="jenisBarang"></td>
-                            </tr>
-                            <tr>
-                              <td>Ukuran : </td>
-                              <td><select class="form-control" id="ukuran">
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
-                              </select></td>
-                            </tr>
-                            <tr>
-                              <td>Deskripsi Barang : </td>
-                              <td><input type="text" name="deskripsi"></td>
-                            </tr>
-                            <tr>
-                              <td>Stok : </td>
-                              <td><input type="number" name="stok"></td>
-                            </tr>
-                            <tr>
-                              <td>Supplier : </td>
-                              <td><select class="form-control" id="idSupplier">
-                              <?php while ($datasupplier = mysqli_fetch_array ($supplier)){
-                                echo '
-
-                                <option value='.$datasupplier["idSupplier"].'>'.$datasupplier["namaSupplier"].'</option>
-
-                              ';
-                            }?>
-                            </select></td>
-                            </tr>
-                          </table>
-                        </div>
-                        <button name="simpan" type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                      </form>
-
-                      <!-- form end -->
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- modal end -->
-
-
-        <!-- Edit data -->
-        <!-- Modal -->
-        <div id="editbarangModal" data-backdrop="static" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-body">
-                <!-- form start -->
-                <form role="form">
-                  <div class="form-group">
-                    <div class="table-responsive">
-                      <table class="table">
-                        <tr>
-                          <td>Kode Barang : </td>
-                          <td><input type="text" name="kodeBarang"></td>
-                        </tr>
-                        <tr>
-                          <td>Gambar : </td>
-                          <td><input type="file" name="gambar" accept="image/*"></td>
-                        </tr>
-                        <tr>
-                          <td>Nama Barang : </td>
-                          <td><input type="text" name="namaBarang"></td>
-                        </tr>
-                        <tr>
-                          <td>Jenis Barang : </td>
-                          <td><input type="text" name="jenisBarang"></td>
-                        </tr>
-                        <tr>
-                          <td>Ukuran : </td>
-                          <td><select class="form-control" id="ukuran">
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                          </select></td>
-                        </tr>
-                        <tr>
-                          <td>Deskripsi Barang : </td>
-                          <td><input type="text" name="deskripsiBarang"></td>
-                        </tr>
-                        <tr>
-                          <td>Stok : </td>
-                          <td><input type="number" name="jenisBarang"></td>
-                        </tr>
-                        <tr>
-                          <td>Supplier : </td>
-                          <td><select class="form-control" id="supplier">
-                            <option>Supplier A</option>
-                            <option>Supplier B</option>
-                            <option>Supplier C</option>
-                            <option>Supplier D</option>
-                          </select></td>
-                        </tr>
-                      </table>
-                    </div>
-                  </form>
-                  <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                  <!-- form end -->
-
-
-                </div>
-
-              </div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <!-- modal end -->
-
-    <!-- hapus -->
-    <!-- Modal -->
-    <div id="hapusbarangModal" data-backdrop="static" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-
-          <div class="modal-body">
-            <!-- form start -->
-            Hapus data?
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Hapus</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-          </div>
-          <!-- form end -->
-
-        </div>
-      </div>
-    </div>
-
-      </div> <!-- /widget-content -->
-
-    </div> <!-- /widget -->
-
-  </div> <!-- /span8 -->
+                    <td><?php echo $post->kodeBarang; ?></td>
+                    <td class="logo_img"><img src="images/<?php echo $post->gambar; ?>" height="40" width="40"></td>
+                    <td><?php echo $post->namaBarang; ?></td>
+                    <td><?php echo $post->jenisBarang; ?></td>
+                    <td><?php echo $post->ukuran; ?></td>
+                    <td><?php echo $post->deskripsi; ?></td>
+                    <td><?php echo $post->stok; ?></td>
+                    <td><?php echo $post->idSupplier1; ?></td>
+                    <td><a href="?controller=PanelGudang&action=klikEdit&idBarang=<?php echo $post->idBarang
+                     ?>&idSupplier=<?php echo $post->idSupplier
+                     ?>" role="button" class="btn btn-primary">Ubah</a> </td>
+                     <td><a href="?controller=PanelGudang&action=hapusGudang&idBarang=<?php echo $post->idBarang?>" role="button" class="btn btn-danger">Hapus</a> </td>
+                   </tr>
+                   <?php }?>
+                 </tbody>
+               </table>
 
 
 
 
-</div> <!-- /row -->
+             </div>
 
-</div> <!-- /container -->
+           </div>
 
 
+         </div>
+       </div>
+     </div>
 
 
 
