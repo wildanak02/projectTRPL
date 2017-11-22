@@ -31,6 +31,7 @@ function call($controller, $action){
 		case 'PanelSalesPermintaan':
 		$controller=new PanelSalesPermintaanController();
 		require_once('model/m_PanelSalesPermintaan.php');
+		require_once('model/m_PanelSalesPermintaan2.php');
 		break;
 
 		case 'PanelSalesChart':
@@ -66,11 +67,9 @@ $controllers = array('Login' => ['login', 'error','authentication'],
 	'PanelHRD'=>['home','klikTambah','klikEdit','tambahKaryawan','editKaryawan','hapusKaryawan'],
 	'PanelSalesLaporan'=>['home','klikTambah','klikEdit','viewLaporan','tambahLaporan','editLaporan'],
 	'PanelSalesChart'=>['home','viewChart'],
-	'PanelSalesPermintaan'=>['home','viewPrediksi','viewPermintaan','minta'],
+	'PanelSalesPermintaan'=>['home','minta'],
 	'PanelGudang'=>['home','klikTambah','klikEdit','viewBarang','tambahBarang','editBarang','hapusBarang'],
-	'PanelSupplier'=>['home','viewPermintaan','terima','tolak'],
-	'ModalAdminUser'=>['modalAdminUserTambah','modalAdminUserEdit','modalAdminUserHapus'],
-	'ModalAdminSupplier'=>['modalAdminSupplierTambah','modalAdminSupplierEdit','modalAdminSupplierHapus']
+	'PanelSupplier'=>['home','viewPermintaan','terima','tolak']
 	);
 
 

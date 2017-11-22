@@ -83,21 +83,21 @@
         <ul class="mainnav">
 
           <li>
-            <a href="?controller=Panel&action=panelSalesLaporan">
+            <a href="?controller=PanelSalesLaporan&action=home">
               <i class="icon-code"></i>
               <span>Laporan Penjualan</span>
             </a>
           </li>
 
           <li>
-            <a href="?controller=Panel&action=panelSalesChart">
+            <a href="?controller=PanelSalesChart&action=home">
               <i class="icon-bar-chart"></i>
               <span>Chart</span>
             </a>
           </li>
 
           <li class="active">
-            <a href="?controller=Panel&action=panelSalesPermintaan">
+            <a href="?controller=PanelSalesPermintaan&action=home">
               <i class="icon-code"></i>
               <span>Permintaan</span>
             </a>
@@ -138,65 +138,23 @@
                 </tr>
               </thead>
               <tbody>
+                  <?php foreach ($posts as $post) {?>
                 <tr>
-                  <td>KK123</td>
+                  <td><?php echo $post->kodeBarang; ?></td>
                   <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>Supplier A</td>
-                  <td>0</td>
-                  <td>50</td>
-                  <td><a data-target="#mintaModal" data-toggle="modal" role="button" class="btn btn-primary">Minta</a> </td>
+                  <td><?php echo $post->namaBarang; ?></td>
+                  <td><?php echo $post->jenisBarang; ?></td>
+                  <td><?php echo $post->ukuran; ?></td>
+                  <td><?php echo $post->namaSupplier; ?></td>
+                  <td><?php echo $post->totalTerjual; ?></td>
+                  <td><?php echo $post->prediksi; ?></td>
+                  <td><a href="?controller=PanelSalesPermintaan&action=minta&idBarang=<?php echo $post->idBarang?>"role="button" class="btn btn-primary">Minta</a> </td>
                 </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>Supplier A</td>
-                  <td>0</td>
-                  <td>50</td>
-                  <td><a data-target="#mintaModal" data-toggle="modal" role="button" class="btn btn-primary">Minta</a> </td>
-                </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>Supplier A</td>
-                  <td>0</td>
-                  <td>50</td>
-                  <td><a data-target="#mintaModal" data-toggle="modal" role="button" class="btn btn-primary">Minta</a> </td>
-                </tr>
+                <?php }?>
               </tbody>
             </table>
 
 
-            <!-- Minta -->
-            <!-- Modal -->
-            <div id="mintaModal" data-backdrop="static" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-
-                  <div class="modal-body">
-                    <!-- form start -->
-                    Mengirim permintaan?
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Iya</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                  </div>
-                  <!-- form end -->
-
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -219,33 +177,26 @@
                 </tr>
               </thead>
               <tbody>
+                <?php foreach ($posts2 as $post2) {
+                  if ($post2->status==1){
+                    $post2->status='Diterima';
+                  }
+                  elseif ($post2->status==2){
+                    $post2->status='Ditolak';
+                  }
+                  else {
+                    $post2->status='Belum Dikonfirmasi';
+                  }?>
                 <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>Supplier A</td>
-                  <td>Diterima</td>
+                  <td><?php echo $post2->kodeBarang; ?></td>
+                  <td class="logo_img"><img src="images/<?php echo $post2->gambar; ?>"></td>
+                  <td><?php echo $post2->namaBarang; ?></td>
+                  <td><?php echo $post2->jenisBarang; ?></td>
+                  <td><?php echo $post2->ukuran; ?></td>
+                  <td><?php echo $post2->namaSupplier; ?></td>
+                  <td><?php echo $post2->status; ?></td>
                 </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>Supplier B</td>
-                  <td>Ditolak</td>
-                </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>Supplier C</td>
-                  <td></td>
-                </tr>
+                <?php }?>
               </tbody>
             </table>
 

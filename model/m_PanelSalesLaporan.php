@@ -75,6 +75,21 @@ class SalesLaporan
       return $req;
     }
 
+    public static function tambahLaporan3($idBarang,$terjual){
+      $total=0;
+      $prediksi=0;
+      $db = DB::getInstance();
+      $req2 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang'");
+      foreach ($req2->fetchAll() as $s) {
+        $total = $s["terjual"] + $terjual;
+      }
+      $req = $db->query("INSERT INTO prediksi
+        VALUES (NULL,'".$idBarang."', '".$total."','".$prediksi."');
+        ");
+
+        return $req;
+      }
+
     public static function tambahLaporan2($idBarang,$terjual){
       $jumlah=0;
       $db = DB::getInstance();

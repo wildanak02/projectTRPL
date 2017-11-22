@@ -81,21 +81,21 @@
         <ul class="mainnav">
 
           <li class="active">
-            <a href="?controller=Panel&action=panelSalesLaporan">
+            <a href="?controller=PanelSalesLaporan&action=home">
               <i class="icon-code"></i>
               <span>Laporan Penjualan</span>
             </a>
           </li>
 
           <li>
-            <a href="?controller=Panel&action=panelSalesChart">
+            <a href="?controller=PanelSalesChart&action=home">
               <i class="icon-bar-chart"></i>
               <span>Chart</span>
             </a>
           </li>
 
           <li>
-            <a href="?controller=Panel&action=panelSalesPermintaan">
+            <a href="?controller=PanelSalesPermintaan&action=home">
               <i class="icon-code"></i>
               <span>Permintaan</span>
             </a>
@@ -168,7 +168,7 @@
                 <?php foreach ($posts as $post) {?>
                 <tr>
                   <td><?php echo $post->kodeBarang; ?></td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
+                  <td class="logo_img"><img src="images/<?php echo $post->kodeBarang; ?>"></td>
                   <td><?php echo $post->namaBarang; ?></td>
                   <td><?php echo $post->jenisBarang; ?></td>
                   <td><?php echo $post->ukuran; ?></td>
