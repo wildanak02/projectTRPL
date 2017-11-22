@@ -12,9 +12,6 @@ class Gudang
 	public $stok;
 	public $idSupplier;
 
-
-
-
 	function __construct($idBarang,$kodeBarang,$gambar,$namaBarang,$jenisBarang,$ukuran,$deskripsi,$stok,$idSupplier)
 	{
 		$this->idBarang=$idBarang;

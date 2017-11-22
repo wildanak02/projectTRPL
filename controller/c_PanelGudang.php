@@ -38,7 +38,7 @@ Class PanelGudangController{
 	}
 
 	public function hapusGudang(){
-		$posts=Gudang::hapus($_GET["idBarang"]);
+		$post=Gudang::hapus($_GET["idBarang"]);
 		header("location:index.php?controller=PanelGudang&action=home");
 	}
 

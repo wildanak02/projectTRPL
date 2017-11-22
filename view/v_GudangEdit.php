@@ -54,7 +54,6 @@
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="javascript:;">Profile</a></li>
                 <li><a href="javascript:;">Logout</a></li>
               </ul>
             </li>
