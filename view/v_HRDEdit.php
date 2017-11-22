@@ -132,10 +132,10 @@
                         <option value="2" <?php if($post->jabatan==2){ echo 'selected';} ?>>Divisi Penjualan</option>
                         <option value="3" <?php if($post->jabatan==3){ echo 'selected';} ?>>Divisi Gudang</option>
                         <option value="4" <?php if($post->jabatan==4){ echo 'selected';} ?>>HRD</option>
-                        <option value="4" <?php if($post->jabatan==5){ echo 'selected';} ?>>Divisi IT</option>
-                        <option value="4" <?php if($post->jabatan==6){ echo 'selected';} ?>>Penjaga</option>
-                        <option value="4" <?php if($post->jabatan==7){ echo 'selected';} ?>>Divisi Pemasaran</option>
-                        <option value="4" <?php if($post->jabatan==8){ echo 'selected';} ?>>Magang</option>
+                        <option value="5" <?php if($post->jabatan==5){ echo 'selected';} ?>>Divisi IT</option>
+                        <option value="6" <?php if($post->jabatan==6){ echo 'selected';} ?>>Penjaga</option>
+                        <option value="7" <?php if($post->jabatan==7){ echo 'selected';} ?>>Divisi Pemasaran</option>
+                        <option value="8" <?php if($post->jabatan==8){ echo 'selected';} ?>>Magang</option>
                       </select></td>
                     </tr>
                     <?php }?>

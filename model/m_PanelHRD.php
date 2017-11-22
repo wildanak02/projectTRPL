@@ -74,6 +74,7 @@ class HRD
 	}
 
   public static function hapus($idKaryawan){
+    
     $db = DB::getInstance();
 
     $req = $db->query("DELETE from karyawan where idKaryawan ='$idKaryawan'");

@@ -101,43 +101,38 @@
 
 
           <div class="widget-content">
-            <form role="form">
-              <input class="hidden" name="controller" value="PanelAdminUser"></input>
-            <input class="hidden" name="action" value="editUser"></input>
+            <form role="form" method="POST">
+              <input class="hidden" name="controller" value="PanelSalesLaporan"></input>
+              <input class="hidden" name="action" value="tambahLaporan"></input>
               <div class="form-group">
                 <div class="table-responsive">
                   <table class="table">
-                    <?php foreach ($posts as $post) {
-                      ?>
-                      <input type="hidden" name="idUser" value="<?php echo $post->idUser; ?>">
                     <tr>
-                      <td>Username </td>
-                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->username; ?>" type="text" name="username"></td>
-                    </tr>
-                    <tr>
-                      <td>Password</td>
-                      <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->password; ?>" type="password" name="password"></td>
-                    </tr>
-                    <tr>
-                      <td>Avatar</td>
-                      <td>:&nbsp;&nbsp;&nbsp;<img src="images/<?php echo $post->avatar; ?>" height="50" width="50"></td>
-                    </tr>
-                    <tr>
-                      <td>Level</td>
-                      <td>:&nbsp;&nbsp;&nbsp;<select class="form-control" name="level" id="userLevel">
-                        <option value="1" <?php if($post->level==1){ echo 'selected';} ?>>Admin</option>
-                        <option value="2" <?php if($post->level==2){ echo 'selected';} ?>>HRD</option>
-                        <option value="3" <?php if($post->level==3){ echo 'selected';} ?>>Sales</option>
-                        <option value="4" <?php if($post->level==4){ echo 'selected';} ?>>Gudang</option>
+                      <td>Kode Barang</td>
+                      <td><select name="kodeBarang" class="form-control" id="kodebarang">
+
+                        <?php foreach ($posts as $post) {
+                          ?>
+                          <option value="<?php echo $post->idBarang; ?>"><?php echo $post->kodeBarang; ?></option>
+                        <?php }?>
                       </select></td>
                     </tr>
-                    <?php }?>
+                    <tr>
+                      <td>Tanggal</td>
+                      <td><input type="date" name="tanggal"></td>
+                    </tr>
+                    <tr>
+                      <td>Terjual</td>
+                      <td><input type="number" name="terjual"></td>
+                    </tr>
+
                   </table>
                 </div>
               </div>
-                <button type="submit" class="btn btn-success" >Simpan</button>
-                <button href="?controller=PanelAdminUser&action=home" class="btn btn-primary" >Batal</button>
-              </form>
+              <button type="submit" class="btn btn-success" data-dismiss="modal">Simpan</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+            </form>
+
 
 
           </div> <!-- /widget-content -->
