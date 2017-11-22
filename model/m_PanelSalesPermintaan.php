@@ -38,7 +38,8 @@ class SalesPermintaan
 
     $db = DB::getInstance();
 
-    $req = $db->query("SELECT db.*,s.*,p.*,pr.* from databarang db join supplier s on db.idSupplier =s.idSupplier join prediksi p on db.idBarang=p.idBarang join permintaan pr on db.idBarang=pr.idBarang where p.totalTerjual>0 and pr.permintaan=0");
+    $req = $db->query("SELECT db.*,s.*,p.*,pr.* from databarang db join supplier s on db.idSupplier =s.idSupplier join
+    prediksi p on db.idBarang=p.idBarang join permintaan pr on db.kodeBarang=pr.kodeBarang where p.totalTerjual>0 and pr.permintaan=0");
       foreach ($req->fetchAll() as $post) {
         $list[] = new SalesPermintaan($post['idBarang'],$post['idPrediksi'],$post['namaSupplier'],$post['kodeBarang'],
         $post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['totalTerjual'],$post['prediksi']
@@ -49,10 +50,10 @@ class SalesPermintaan
     return $list;
   }
 
-  public static function minta($idBarang){
+  public static function minta($kodeBarang){
     $db = DB::getInstance();
 
-    $req = $db->query("UPDATE permintaan SET permintaan= '".'1'."' WHERE idBarang='$idBarang'");
+    $req = $db->query("UPDATE permintaan SET permintaan= '".'1'."' WHERE kodeBarang='$kodeBarang'");
 
     return $req;
   }

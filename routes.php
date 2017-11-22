@@ -49,6 +49,7 @@ function call($controller, $action){
 		case 'PanelGudang':
 		$controller=new PanelGudangController();
 		require_once('model/m_PanelGudang.php');
+		require_once('model/m_PanelAdminSupplier.php');
 		break;
 
 		case 'PanelSupplier':

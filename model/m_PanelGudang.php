@@ -36,6 +36,16 @@ class Gudang
 		return $req;
 	}
 
+    public static function tambahGudang2($kodeBarang, $idSupplier){
+        $db = DB::getInstance();
+
+        $req = $db->query("INSERT INTO permintaan
+			VALUES (NULL,'".$kodeBarang."','".$idSupplier."', '".'0'."','".'0'."');
+			");
+
+        return $req;
+    }
+
 	public static function viewGudang(){
 		$list = [];
 

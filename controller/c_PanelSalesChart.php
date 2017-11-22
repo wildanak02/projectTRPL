@@ -2,7 +2,7 @@
 Class PanelSalesChartController{
 
 	public function home(){
-		require_once("view/v_PaneSalesChart.php");
+		require_once("view/v_PanelSalesChart.php");
 	}
 
   public function viewKaryawan(){

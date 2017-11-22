@@ -102,7 +102,7 @@
           <div class="widget-content">
             <form role="form">
               <input class="hidden" name="controller" value="PanelGudang"></input>
-            <input class="hidden" name="action" value="editGudang"></input>
+            <input class="hidden" name="action" value="editBarang"></input>
               <div class="form-group">
                 <div class="table-responsive">
                   <table class="table">

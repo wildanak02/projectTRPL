@@ -175,7 +175,7 @@
                     <td><a href="?controller=PanelGudang&action=klikEdit&idBarang=<?php echo $post->idBarang
                      ?>&idSupplier=<?php echo $post->idSupplier
                      ?>" role="button" class="btn btn-primary">Ubah</a> </td>
-                     <td><a href="?controller=PanelGudang&action=hapusGudang&idBarang=<?php echo $post->idBarang?>" role="button" class="btn btn-danger">Hapus</a> </td>
+                     <td><a href="?controller=PanelGudang&action=hapusBarang&idBarang=<?php echo $post->idBarang?>" role="button" class="btn btn-danger">Hapus</a> </td>
                    </tr>
                    <?php }?>
                  </tbody>

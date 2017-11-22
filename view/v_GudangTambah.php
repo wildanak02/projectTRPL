@@ -102,20 +102,17 @@
           <div class="widget-content">
             <form  role="form" method="POST" enctype="multipart/form-data">
               <input class="hidden" name="controller" value="PanelGudang"></input>
-              <input class="hidden" name="action" value="tambahGudang"></input>
+              <input class="hidden" name="action" value="tambahBarang"></input>
               <div class="form-group">
                 <div class="table-responsive">
                   <table class="table">
                     <tr>
                       <td>Supplier : </td>
                       <td><select class="form-control" name="idSupplier">
-                        <option value="1">feril</option>
-                        <option value="2">Bima</option>
-                        <option value="18">Thariq</option>
-                        <option value="19">Abbi</option>
-                        <option value="20">Juven</option>
-                        <option value="22">Gilang</option>
-                        <option value="23">aye</option>
+                              <?php foreach ($posts as $post) {
+                              ?>
+                        <option value="<?php echo $post->idSupplier; ?>"><?php echo $post->namaSupplier; ?></option>
+                              <?php }?>
                       </select></td>
                     </tr>
                     <tr>

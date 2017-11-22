@@ -8,7 +8,7 @@ Class PanelSalesPermintaanController{
 	}
 
   public function minta(){
-		$posts=SalesPermintaan::minta($_GET["idBarang"]);
+		$posts=SalesPermintaan::minta($_GET["kodeBarang"]);
 		header("location:index.php?controller=PanelSalesPermintaan&action=home");
 	}
 

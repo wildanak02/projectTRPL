@@ -141,14 +141,14 @@
                   <?php foreach ($posts as $post) {?>
                 <tr>
                   <td><?php echo $post->kodeBarang; ?></td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
+                  <td class="logo_img"><img src="images/<?php echo $post->gambar; ?>" height="40" width="40"></td>
                   <td><?php echo $post->namaBarang; ?></td>
                   <td><?php echo $post->jenisBarang; ?></td>
                   <td><?php echo $post->ukuran; ?></td>
                   <td><?php echo $post->namaSupplier; ?></td>
                   <td><?php echo $post->totalTerjual; ?></td>
                   <td><?php echo $post->prediksi; ?></td>
-                  <td><a href="?controller=PanelSalesPermintaan&action=minta&idBarang=<?php echo $post->idBarang?>"role="button" class="btn btn-primary">Minta</a> </td>
+                  <td><a href="?controller=PanelSalesPermintaan&action=minta&kodeBarang=<?php echo $post->kodeBarang?>"role="button" class="btn btn-primary">Minta</a> </td>
                 </tr>
                 <?php }?>
               </tbody>
@@ -189,7 +189,7 @@
                   }?>
                 <tr>
                   <td><?php echo $post2->kodeBarang; ?></td>
-                  <td class="logo_img"><img src="images/<?php echo $post2->gambar; ?>"></td>
+                  <td class="logo_img"><img src="images/<?php echo $post2->gambar; ?>" height="40" width="40"></td>
                   <td><?php echo $post2->namaBarang; ?></td>
                   <td><?php echo $post2->jenisBarang; ?></td>
                   <td><?php echo $post2->ukuran; ?></td>

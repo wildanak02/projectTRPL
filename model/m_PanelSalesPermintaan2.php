@@ -34,7 +34,7 @@ class SalesPermintaan2
     $db = DB::getInstance();
 
     $req = $db->query("SELECT db.*,s.*,p.* from databarang db join supplier s
-      on db.idSupplier =s.idSupplier join permintaan p on db.idBarang=p.idBarang where permintaan=1");
+      on db.idSupplier =s.idSupplier join permintaan p on db.kodeBarang=p.kodeBarang where permintaan=1");
       foreach ($req->fetchAll() as $post) {
         $list[] = new SalesPermintaan2($post['idBarang'],$post['namaSupplier'],$post['kodeBarang'],
         $post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],

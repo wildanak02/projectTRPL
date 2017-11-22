@@ -28,17 +28,32 @@ class AdminSupplier
   public static function viewSupplier(){
     $list = [];
 
-		$db = DB::getInstance();
+    $db = DB::getInstance();
 
-		$req = $db->query("SELECT * FROM supplier");
+    $req = $db->query("SELECT * FROM supplier");
     foreach ($req->fetchAll() as $post) {
-  			$list[] = new AdminSupplier($post['idSupplier'],$post['namaSupplier'],$post['alamat']
-  				);
-  		}
+        $list[] = new AdminSupplier($post['idSupplier'],$post['namaSupplier'],$post['alamat']
+        );
+    }
 
 
-  		return $list;
-  }
+    return $list;
+}
+
+    public static function ambilSupplier($idSupplier){
+        $list = [];
+
+        $db = DB::getInstance();
+
+        $req = $db->query("SELECT * FROM supplier where idSupplier='$idSupplier'");
+        foreach ($req->fetchAll() as $post) {
+            $list[] = new AdminSupplier($post['idSupplier'],$post['namaSupplier'],$post['alamat']
+            );
+        }
+
+
+        return $list;
+    }
 
   public static function ambiledit($idSupplier){
     $list = [];
