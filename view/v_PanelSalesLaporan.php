@@ -53,7 +53,6 @@
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="javascript:;">Profile</a></li>
                 <li><a href="javascript:;">Logout</a></li>
               </ul>
             </li>
@@ -124,19 +123,36 @@
 
           <div class="widget-content">
             <table class="table table-condensed">
-              <a data-target="#tambahLaporanModal" data-toggle="modal" role="button" class="btn btn-success">Tambah Laporan</a>
+              <a href="?controller=PanelSalesLaporan&action=klikTambah" role="button" class="btn btn-success">Tambah Laporan</a>
               &nbsp;&nbsp;&nbsp;&nbsp;
-                <select class="form-control" id="datemonthfilters">
-                  <option>Januari</option>
-                  <option>Februari</option>
-                  <option>Maret</option>
+              <form class="form-control" method="POST">
+                <select class="form-control" name="filterbulan">
+                  <option value="01">Januari</option>
+                  <option value="02">Februari</option>
+                  <option value="03">Maret</option>
+                  <option value="04">April</option>
+                  <option value="05">Mei</option>
+                  <option value="06">Juni</option>
+                  <option value="07">Juli</option>
+                  <option value="08">Agustus</option>
+                  <option value="09">September</option>
+                  <option value="010">Oktober</option>
+                  <option value="011" selected="selected">November</option>
+                  <option value="012">Desember</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                  <select class="form-control" id="dateyearfilters">
-                    <option>2017</option>
-                    <option>2016</option>
-                    <option>2015</option>
+                  <select class="form-control" name="filtertahun">
+                    <option value="2018">2018</option>
+                    <option value="2017" selected="selected">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
                   </select>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input class="btn btn" type="submit" name="submit">
+                  </form>
               <thead>
                 <tr>
                   <th>Kode Barang</th>
@@ -149,117 +165,20 @@
                 </tr>
               </thead>
               <tbody>
+                <?php foreach ($posts as $post) {?>
                 <tr>
-                  <td>KK123</td>
+                  <td><?php echo $post->kodeBarang; ?></td>
                   <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>0</td>
-                  <td><a data-target="#editLaporanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
+                  <td><?php echo $post->namaBarang; ?></td>
+                  <td><?php echo $post->jenisBarang; ?></td>
+                  <td><?php echo $post->ukuran; ?></td>
+                  <td><?php echo $post->terjual; ?></td>
+                  <td><a href="?controller=PanelSalesLaporan&action=klikEdit&idPenjualan=<?php echo $post->idPenjualan?>" role="button" class="btn btn-primary">Ubah</a> </td>
                 </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>0</td>
-                  <td><a data-target="#editLaporanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>0</td>
-                  <td><a data-target="#editLaporanModal" data-toggle="modal" role="button" class="btn btn-primary">Ubah</a> </td>
-                </tr>
+                <?php }?>
               </tbody>
             </table>
 
-
-            <!-- Tambah Data -->
-            <!-- Modal -->
-            <div id="tambahLaporanModal" data-backdrop="static" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <!-- form start -->
-                    <form role="form">
-                      <div class="form-group">
-                        <div class="table-responsive">
-                          <table class="table">
-                            <tr>
-                              <td>Kode Barang</td>
-                              <td><select class="form-control" id="kodebarang">
-                                <option>KK123</option>
-                                <option>KK234</option>
-                                <option>KK345</option>
-                              </select></td>
-                            </tr>
-                            <tr>
-                              <td>Tanggal</td>
-                              <td><input type="date" name="tanggal"></td>
-                            </tr>
-                            <tr>
-                              <td>Terjual</td>
-                              <td><input type="number" name="laporan"></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </form>
-                      <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                      <!-- form end -->
-
-
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <!-- modal end -->
-
-            <!-- Edit Data -->
-            <!-- Modal -->
-            <div id="editLaporanModal" data-backdrop="static" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-
-                  <div class="modal-body">
-                    <!-- form start -->
-                    <form role="form">
-                      <div class="form-group">
-                        <div class="table-responsive">
-                          <table class="table">
-                            <tr>
-                              <td>Terjual</td>
-                              <td><input type="number" name="laporan"></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </form>
-                      <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                      <!-- form end -->
-
-
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <!-- modal end -->
 
           </div> <!-- /widget-content -->
 

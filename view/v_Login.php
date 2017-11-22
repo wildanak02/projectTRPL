@@ -34,18 +34,18 @@
       <h1>Syafia</h1>
 
 
-      <form method="post">
+      <form method="GET">
         <input type="hidden" name="controller" value="Login">
 							<input type="hidden" name="action" value="authentication">
             <div class="form-group ">
               <input class="form-control" name="username" type="text"
-    								value="<?=isset($_POST["username"]) ? $_POST["username"] : NULL?>" required autofocus>
+    								value="<?=isset($_GET["username"]) ? $_GET["username"] : NULL?>" required autofocus>
           <i class="fa fa-user"></i>
             </div>
 
             <div class="form-group">
               <input class="form-control" name="password" type="password"
-								value="<?=isset($_POST["password"]) ? $_POST["password"] : NULL?>" required>
+								value="<?=isset($_GET["password"]) ? $_GET["password"] : NULL?>" required>
               <i class="fa fa-lock"></i>
             </div>
 
