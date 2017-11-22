@@ -67,7 +67,7 @@ $controllers = array('Login' => ['login', 'error','authentication'],
 	'PanelSalesLaporan'=>['home','klikTambah','klikEdit','viewLaporan','tambahLaporan','editLaporan'],
 	'PanelSalesChart'=>['home','viewChart'],
 	'PanelSalesPermintaan'=>['home','viewPrediksi','viewPermintaan','minta'],
-	'PanelGudang'=>['home','viewBarang','tambahBarang','editBarang','hapusBarang'],
+	'PanelGudang'=>['home','klikTambah','klikEdit','viewBarang','tambahBarang','editBarang','hapusBarang'],
 	'PanelSupplier'=>['home','viewPermintaan','terima','tolak'],
 	'ModalAdminUser'=>['modalAdminUserTambah','modalAdminUserEdit','modalAdminUserHapus'],
 	'ModalAdminSupplier'=>['modalAdminSupplierTambah','modalAdminSupplierEdit','modalAdminSupplierHapus']
