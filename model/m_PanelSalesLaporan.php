@@ -84,12 +84,11 @@ class SalesLaporan
       $at=0;
       $bt=0;
       $periode=12;
-      $i=0;
 
       if ($i<$periode){
-        for ($i <= $periode, $i++){
+        for ($i=0; $i <= $periode; $i++){
           $st=$alpha*$terjual+(1-$alpha)*$st;
-          $s2t=$alpha*$st+(1-$alpha)*$s2t
+          $s2t=$alpha*$st+(1-$alpha)*$s2t;
           $at=2*$st+$s2t;
           $bt=$alpha/(1-$alpha)*($st-$s2t);
         }

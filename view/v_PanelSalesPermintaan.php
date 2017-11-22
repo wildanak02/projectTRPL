@@ -83,13 +83,6 @@
             </a>
           </li>
 
-          <li>
-            <a href="?controller=PanelSalesChart&action=home">
-              <i class="icon-bar-chart"></i>
-              <span>Chart</span>
-            </a>
-          </li>
-
           <li class="active">
             <a href="?controller=PanelSalesPermintaan&action=home">
               <i class="icon-code"></i>
