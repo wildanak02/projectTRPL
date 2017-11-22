@@ -2765,6 +2765,15 @@ textarea:focus {
   background-attachment: fixed;
   padding: 300px 0;
 }
+.produkpertama {
+  width: 50px;
+  height: 100px;
+  background-position: center;
+  background-attachment: fixed;
+  padding-right: 30px; padding-bottom: 10px;padding-left: 30px;padding-top: 10px;
+
+}
+
 .hero-box .hero-text h1,
 .hero-box .hero-text p {
   text-transform: uppercase;
@@ -3131,7 +3140,7 @@ textarea:focus {
 
 /* -------- Parallax -------- */
 .parallax-box {
-  background-image: url(../img/rent-boat-background.jpg);
+  background-image: url(../img/syafiadepan.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

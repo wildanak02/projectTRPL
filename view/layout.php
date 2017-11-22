@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nava</title>
+    <title>Syafia</title>
     <meta charset="utf-8">
     <meta name="description" content="Traveling HTML5 Template" />
     <meta name="author" content="Design Hooks" />
