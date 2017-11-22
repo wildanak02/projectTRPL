@@ -85,15 +85,12 @@ class SalesLaporan
       $bt=0;
       $periode=12;
 
-      if ($i<$periode){
-        for ($i=0; $i <= $periode; $i++){
           $st=$alpha*$terjual+(1-$alpha)*$st;
           $s2t=$alpha*$st+(1-$alpha)*$s2t;
           $at=2*$st+$s2t;
           $bt=$alpha/(1-$alpha)*($st-$s2t);
-        }
-      }
-      else {
+
+      if ($i>=periode) {
         $prediksi=$at+$bt;
       }
 
