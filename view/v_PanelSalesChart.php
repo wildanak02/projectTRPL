@@ -83,21 +83,21 @@
         <ul class="mainnav">
 
           <li>
-            <a href="?controller=Panel&action=panelSalesLaporan">
+            <a href="?controller=PanelSalesLaporan&action=home">
               <i class="icon-code"></i>
               <span>Laporan Penjualan</span>
             </a>
           </li>
 
           <li class="active">
-            <a hhref="?controller=Panel&action=panelSalesChart">
+            <a hhref="?controller=PanelSalesChart&action=home">
               <i class="icon-bar-chart"></i>
               <span>Chart</span>
             </a>
           </li>
 
           <li>
-            <a href="?controller=Panel&action=panelSalesPermintaan">
+            <a href="?controller=PanelSalesPermintaan&action=home">
               <i class="icon-code"></i>
               <span>Permintaan</span>
             </a>
