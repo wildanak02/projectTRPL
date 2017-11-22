@@ -39,9 +39,6 @@
           <span class="icon-bar"></span>
         </a>
 
-        <a class="brand" href="index.html">
-          Bootstrap Admin Template
-        </a>
 
         <div class="nav-collapse">
           <ul class="nav pull-right">

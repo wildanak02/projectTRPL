@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Account - Bootstrap Admin Template</title>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -37,10 +37,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </a>
-
-        <a class="brand" href="index.html">
-          Bootstrap Admin Template
         </a>
 
         <div class="nav-collapse">
