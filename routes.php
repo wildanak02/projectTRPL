@@ -34,11 +34,6 @@ function call($controller, $action){
 		require_once('model/m_PanelSalesPermintaan2.php');
 		break;
 
-		case 'PanelSalesChart':
-		$controller=new PanelSalesChartController();
-		require_once('model/m_PanelSalesChart.php');
-		break;
-
 		case 'PanelSalesLaporan':
 		$controller=new PanelSalesLaporanController();
 		require_once('model/m_TambahLaporan.php');
@@ -67,7 +62,6 @@ $controllers = array('Login' => ['login', 'error','authentication'],
 	'PanelAdminSupplier'=>['home','klikTambah','klikEdit','tambahSupplier','editSupplier','hapusSupplier'],
 	'PanelHRD'=>['home','klikTambah','klikEdit','tambahKaryawan','editKaryawan','hapusKaryawan'],
 	'PanelSalesLaporan'=>['home','klikTambah','klikEdit','viewLaporan','tambahLaporan','editLaporan'],
-	'PanelSalesChart'=>['home','viewChart'],
 	'PanelSalesPermintaan'=>['home','minta'],
 	'PanelGudang'=>['home','klikTambah','klikEdit','viewBarang','tambahBarang','editBarang','hapusBarang'],
 	'PanelSupplier'=>['home','viewPermintaan','terima','tolak']
