@@ -49,13 +49,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="icon-user"></i>
-                EGrappler.com
+      <?php echo $_SESSION['login_user'];?>
                 <b class="caret"></b>
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="javascript:;">Profile</a></li>
-                <li><a href="javascript:;">Logout</a></li>
+                <li><a href="?logout">Logout</a></li>
               </ul>
             </li>
           </ul>
@@ -107,6 +106,18 @@
               <div class="form-group">
                 <div class="table-responsive">
                   <table class="table">
+                    <tr>
+                      <td>Username : </td>
+                      <td><input type="text" name="username"></td>
+                    </tr>
+                    <tr>
+                      <td>Password : </td>
+                      <td><input type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                      <td>Avatar : </td>
+                      <td><input type="file" name="avatar" accept="image/*"></td>
+                    </tr>
                     <tr>
                       <td>Nama Supplier : </td>
                       <td><input type="text" name="namaSupplier"></td>

@@ -78,11 +78,33 @@ class SalesLaporan
     public static function tambahLaporan3($idBarang,$terjual){
       $total=0;
       $prediksi=0;
+      $alpha=0.9;
+      $st=0;
+      $s2t=0;
+      $at=0;
+      $bt=0;
+      $periode=12;
+      $i=0;
+
+      if ($i<$periode){
+        for ($i <= $periode, $i++){
+          $st=$alpha*$terjual+(1-$alpha)*$st;
+          $s2t=$alpha*$st+(1-$alpha)*$s2t
+          $at=2*$st+$s2t;
+          $bt=$alpha/(1-$alpha)*($st-$s2t);
+        }
+      }
+      else {
+        $prediksi=$at+$bt;
+      }
+
+
       $db = DB::getInstance();
       $req2 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang'");
       foreach ($req2->fetchAll() as $s) {
         $total = $s["terjual"] + $terjual;
       }
+
       $req = $db->query("INSERT INTO prediksi
         VALUES (NULL,'".$idBarang."', '".$total."','".$prediksi."');
         ");

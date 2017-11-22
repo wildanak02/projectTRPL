@@ -22,8 +22,9 @@ Class PanelSalesLaporanController{
 	}
 
   public function tambahLaporan(){
-		$posts = SalesLaporan::tambahLaporan($_POST["kodeBarang"],$_POST["tanggal"],$_POST["terjual"]);
-		$posts2 = SalesLaporan::tambahLaporan2($_POST["kodeBarang"],$_POST["terjual"]);
+		$posts = SalesLaporan::tambahLaporan($_POST["idBarang"],$_POST["tanggal"],$_POST["terjual"]);
+		$posts2 = SalesLaporan::tambahLaporan2($_POST["idBarang"],$_POST["terjual"]);
+		$posts3 = SalesLaporan::tambahLaporan3($_POST["idBarang"],$_POST["terjual"]);
 		header("location:index.php?controller=PanelSalesLaporan&action=home");
 	}
 

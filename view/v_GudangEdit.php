@@ -49,12 +49,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="icon-user"></i>
-                EGrappler.com
+                <?php echo $_SESSION['login_user'];?>
                 <b class="caret"></b>
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="javascript:;">Logout</a></li>
+                <li><a href="?logout">Logout</a></li>
               </ul>
             </li>
           </ul>
@@ -106,7 +106,7 @@
               <div class="form-group">
                 <div class="table-responsive">
                   <table class="table">
-                    <?php 
+                    <?php
                     foreach ($posts as $post) {
                       ?>
                       <input type="hidden" name="idBarang" value="<?php echo $post->idBarang; ?>">

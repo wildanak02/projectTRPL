@@ -49,13 +49,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="icon-user"></i>
-                EGrappler.com
+                  <?php echo $_SESSION['login_user'];?>
                 <b class="caret"></b>
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="javascript:;">Profile</a></li>
-                <li><a href="javascript:;">Logout</a></li>
+                <li><a href="?logout">Logout</a></li>
               </ul>
             </li>
           </ul>
@@ -69,7 +68,6 @@
     </div> <!-- /navbar-inner -->
 
   </div> <!-- /navbar -->
-
 
 
 
@@ -123,36 +121,18 @@
                 </tr>
               </thead>
               <tbody>
+              <?php foreach ($posts as $post) {?>
                 <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>0</td>
-                  <td><a role="button" class="btn btn-primary">Terima</a> </td>
-                  <td><a role="button" class="btn btn-danger">Tolak</a> </td>
+                  <td><?php echo $post->kodeBarang; ?></td>
+                  <td class="logo_img"><img src="images/<?php echo $post->gambar; ?>"></td>
+                  <td><?php echo $post->namaBarang; ?></td>
+                  <td><?php echo $post->jenisBarang; ?></td>
+                  <td><?php echo $post->ukuran; ?></td>
+                  <td><?php echo $post->prediksi; ?></td>
+                  <td><a href="?controller=PanelSupplier&action=terima&kodeBarang=<?php echo $post->kodeBarang?>&prediksi=<?php echo $post->prediksi?>" role="button" class="btn btn-primary">Terima</a> </td>
+                  <td><a href="?controller=PanelSupplier&action=tolak&kodeBarang=<?php echo $post->kodeBarang?>" role="button" class="btn btn-danger">Tolak</a> </td>
                 </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>0</td>
-                  <td><a role="button" class="btn btn-primary">Terima</a> </td>
-                  <td><a role="button" class="btn btn-danger">Tolak</a> </td>
-                </tr>
-                <tr>
-                  <td>KK123</td>
-                  <td class="logo_img"><img src="assets/images/event1.png"></td>
-                  <td>Baju Koko Keren Coklat</td>
-                  <td>Koko</td>
-                  <td>L</td>
-                  <td>0</td>
-                  <td><a role="button" class="btn btn-primary">Terima</a> </td>
-                  <td><a role="button" class="btn btn-danger">Tolak</a> </td>
-                </tr>
+              <?php }?>
               </tbody>
             </table>
 

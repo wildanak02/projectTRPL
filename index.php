@@ -1,5 +1,6 @@
 <?php
 require_once('connection.php');
+session_start();
 
 if (isset($_POST['controller']) && isset($_POST['action']) ) {
 	$controller = $_POST['controller'];

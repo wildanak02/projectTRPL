@@ -25,6 +25,16 @@ class AdminSupplier
 		return $req;
 	}
 
+  public static function tambahUser($username,$password,$avatar){
+		$db = DB::getInstance();
+
+		$req = $db->query("INSERT INTO user
+			VALUES (NULL,'".$username."', '".$password."','".$avatar."', '".'5'."');
+			");
+
+		return $req;
+	}
+
   public static function viewSupplier(){
     $list = [];
 

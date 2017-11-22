@@ -49,12 +49,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="icon-user"></i>
-                EGrappler.com
+                  <?php echo $_SESSION['login_user'];?>
                 <b class="caret"></b>
               </a>
 
               <ul class="dropdown-menu">
-                <li><a href="javascript:;">Logout</a></li>
+                <li><a href="?logout">Logout</a></li>
               </ul>
             </li>
           </ul>
@@ -119,7 +119,7 @@
                       <td>Kode Barang : </td>
                       <td><input type="text" name="kodeBarang"></td>
                     </tr>
-                    
+
                     <tr>
                       <td>Gambar : </td>
                       <td><input type="file" name="gambar" accept="image/*"></td>
@@ -143,12 +143,12 @@
                     <tr>
                       <td>Deskripsi : </td>
                       <td><input type="text" name="deskripsi"></td>
-                    </tr>     
+                    </tr>
                     <tr>
                       <td>Stok : </td>
                       <td><input type="text" name="stok"></td>
 
-                    </tr>          
+                    </tr>
                   </table>
                 </div>
               </div>
