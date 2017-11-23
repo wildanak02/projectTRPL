@@ -105,7 +105,7 @@
                   <table class="table">
                     <tr>
                       <td>Kode Barang</td>
-                      <td><select name="kodeBarang" class="form-control" id="kodebarang">
+                      <td><select name="idBarang" class="form-control" id="kodebarang">
 
                         <?php foreach ($posts as $post) {
                           ?>

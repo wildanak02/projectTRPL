@@ -14,8 +14,8 @@
 
             <nav class="site-nav">
                 <ul class="clean-list site-links">
-                    <li><a href="#ourproducts"> OUR PRODUCTS</a></li>
-                    <li><a href="#ourteams"> OUR TEAM</a></li>
+                    <li><a href="#ourproducts"> Produk Kami</a></li>
+                    <li><a href="#ourteams"> Tim Pengembang</a></li>
                 </ul>
 
                 <a href="?controller=Login&action=login" class="btn btn-outlined">LOGIN</a>
@@ -41,16 +41,16 @@
             <div class="statistics-box">
                 <div class="statistics-item">
                     <span class="value"></span>
-                    <p class="title">Perlengkapan Sholat</p>
+                    <p class="title">Busana Muslim Pria</p>
                 </div>
 
                 <div class="statistics-item">
                     <span class="value"></span>
-                    <p class="title">Perlengkapan dan oleh-oleh haji</p>
+                    <p class="title">Busana Muslim Anak</p>
                 </div>
                 <div class="statistics-item">
                     <span class="value"></span>
-                    <p class="title">Mahar dan hantaran pernikahan</p>
+                    <p class="title">Busana Muslim Wanita</p>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <!-- Title -->
         <div id="ourproducts" class="section-title">
             <div class="container">
-                <h2 class="title" style="font-weight: bold;">Our Products</h2>
+                <h2 class="title" style="font-weight: bold;">Produk Kami</h2>
                 <!--  foto start -->
                 <center>
                     <div class="table-responsive">
@@ -255,7 +255,7 @@
         <!-- Title -->
         <div class="section-title" id="ourteams">
             <div>
-                <h2 class="title" style="font-weight: bold;">OUR TEAM</h2>
+                <h2 class="title" style="font-weight: bold;">Tim Pengembang</h2>
                 <!-- Nama Kelompok start -->
                 <center>
                     <div class="table-responsive">

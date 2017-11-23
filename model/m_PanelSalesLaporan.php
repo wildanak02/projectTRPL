@@ -38,7 +38,7 @@ class SalesLaporan
     $db = DB::getInstance();
 
     $req = $db->query("SELECT db.*, p.* from databarang db join penjualan p
-      on db.idBarang = p.idBarang where year(tanggal) = 2017 and month(tanggal) = 11");
+      on db.idBarang = p.idBarang");
       foreach ($req->fetchAll() as $post) {
         $list[] = new SalesLaporan($post['idBarang'],$post['idPenjualan'],$post['kodeBarang'],$post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['terjual']
       );
@@ -83,7 +83,22 @@ class SalesLaporan
       $s2t=0;
       $at=0;
       $bt=0;
+      $i;
       $periode=12;
+
+      $db = DB::getInstance();
+      $req2 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang'");
+
+      //hitung periode
+      foreach ($req2->fetchAll() as $g) {
+        $i = count($g["terjual"]);
+      }
+
+      //hitung total
+      $req3 = $db->query("SELECT SUM(terjual) as tj from penjualan where idBarang ='$idBarang'");
+      foreach ($req3->fetchAll() as $s) {
+        $total =$s["tj"];
+      }
 
           $st=$alpha*$terjual+(1-$alpha)*$st;
           $s2t=$alpha*$st+(1-$alpha)*$s2t;
@@ -92,18 +107,11 @@ class SalesLaporan
 
       if ($i>=periode) {
         $prediksi=$at+$bt;
+
+        $req = $db->query("INSERT INTO prediksi
+          VALUES (NULL,'".$idBarang."', '".$total."','".$prediksi."');
+          ");
       }
-
-
-      $db = DB::getInstance();
-      $req2 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang'");
-      foreach ($req2->fetchAll() as $s) {
-        $total = $s["terjual"] + $terjual;
-      }
-
-      $req = $db->query("INSERT INTO prediksi
-        VALUES (NULL,'".$idBarang."', '".$total."','".$prediksi."');
-        ");
 
         return $req;
       }

@@ -12,7 +12,6 @@ Class PanelGudangController{
 	}
 	public function klikEdit(){
 		$posts=Gudang::ambiledit($_GET["idBarang"]);
-		$posts2=AdminSupplier::ambilSupplier($_GET["idSupplier"]);
 		require_once("view/v_GudangEdit.php");
 	}
 
@@ -35,7 +34,7 @@ Class PanelGudangController{
 		header("location:index.php?controller=PanelGudang&action=home");
 	}
 	public function editBarang(){
-		$posts = Gudang::editGudang($_GET["idBarang"],$_GET["kodeBarang"],$_GET["namaBarang"],$_GET["jenisBarang"],$_GET["ukuran"],$_GET["deskripsi"],$_GET["stok"]);	
+		$posts = Gudang::editGudang($_GET["idBarang"],$_GET["kodeBarang"],$_GET["namaBarang"],$_GET["jenisBarang"],$_GET["ukuran"],$_GET["deskripsi"],$_GET["stok"]);
 		header("location:index.php?controller=PanelGudang&action=home");
 
 	}

@@ -122,28 +122,6 @@
               <tbody>
 
                 <?php foreach ($posts as $post) {
-                  if ($post->idSupplier==1){
-                    $post->idSupplier1='feril';
-                  }
-                  elseif ($post->idSupplier==2){
-                    $post->idSupplier1='Bima';
-                  }
-                  elseif ($post->idSupplier==18){
-                    $post->idSupplier1='Thariq';
-                  }
-                  elseif ($post->idSupplier==19){
-                    $post->idSupplier1='Abbi';
-                  }
-                  elseif ($post->idSupplier==20){
-                    $post->idSupplier1='Juven';
-                  }
-                  elseif ($post->idSupplier==22){
-                    $post->idSupplier1='gilang';
-                  }
-                  elseif ($post->idSupplier==23){
-                    $post->idSupplier1='aye';
-
-                  }
 
                   if ($post->jenisBarang==1){
                     $post->jenisBarang='Baju Muslim Laki-Laki';
@@ -155,9 +133,6 @@
                     $post->jenisBarang='Baju Muslim Anak-Anak';
                   }
 
-
-
-
                   ?>
                   <tr>
                     <td><?php echo $post->kodeBarang; ?></td>
@@ -167,7 +142,7 @@
                     <td><?php echo $post->ukuran; ?></td>
                     <td><?php echo $post->deskripsi; ?></td>
                     <td><?php echo $post->stok; ?></td>
-                    <td><?php echo $post->idSupplier1; ?></td>
+                    <td><?php echo $post->namaSupplier; ?></td>
                     <td><a href="?controller=PanelGudang&action=klikEdit&idBarang=<?php echo $post->idBarang
                      ?>&idSupplier=<?php echo $post->idSupplier
                      ?>" role="button" class="btn btn-primary">Ubah</a> </td>

@@ -2626,7 +2626,7 @@ textarea:focus {
 /* ----------------- 9. UI Components ----------------- */
 /* ----------------- 9.1. Header ----------------- */
 .main-header {
-  position: absolute;
+  position: fixed;
   padding: 35px 0;
   z-index: 9;
   right: 0;

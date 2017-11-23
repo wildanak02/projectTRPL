@@ -11,8 +11,9 @@ class Gudang
 	public $deskripsi;
 	public $stok;
 	public $idSupplier;
+	public $namaSupplier;
 
-	function __construct($idBarang,$kodeBarang,$gambar,$namaBarang,$jenisBarang,$ukuran,$deskripsi,$stok,$idSupplier)
+	function __construct($idBarang,$kodeBarang,$gambar,$namaBarang,$jenisBarang,$ukuran,$deskripsi,$stok,$idSupplier,$namaSupplier)
 	{
 		$this->idBarang=$idBarang;
 		$this->kodeBarang=$kodeBarang;
@@ -23,6 +24,7 @@ class Gudang
 		$this->deskripsi=$deskripsi;
 		$this->stok=$stok;
 		$this->idSupplier=$idSupplier;
+		$this->namaSupplier=$namaSupplier;
 
 	}
 
@@ -51,9 +53,9 @@ class Gudang
 
 		$db = DB::getInstance();
 
-		$req = $db->query("SELECT * FROM databarang");
+		$req = $db->query("SELECT * FROM databarang db join supplier s on  db.idSupplier=s.idSupplier");
 		foreach ($req->fetchAll() as $post) {
-			$list[] = new Gudang($post['idBarang'], $post['kodeBarang'],$post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['deskripsi'],$post['stok'],$post['idSupplier']
+			$list[] = new Gudang($post['idBarang'], $post['kodeBarang'],$post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['deskripsi'],$post['stok'],$post['idSupplier'],$post['namaSupplier']
 				);
 		}
 
@@ -66,9 +68,9 @@ class Gudang
 
 		$db = DB::getInstance();
 
-		$req = $db->query("SELECT * FROM databarang where idBarang='$idBarang'");
+		$req = $db->query("SELECT * FROM databarang db join supplier s on db.idSupplier=s.idSupplier where idBarang='$idBarang'");
 		foreach ($req->fetchAll() as $post) {
-			$list[] = new Gudang($post['idBarang'],$post['kodeBarang'],$post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['deskripsi'],$post['stok'],$post['idSupplier']
+			$list[] = new Gudang($post['idBarang'],$post['kodeBarang'],$post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['deskripsi'],$post['stok'],$post['idSupplier'],$post['namaSupplier']
 				);
 		}
 

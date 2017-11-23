@@ -106,15 +106,12 @@
                     foreach ($posts as $post) {
                       ?>
                       <input type="hidden" name="idBarang" value="<?php echo $post->idBarang; ?>">
-                      <?php foreach ( $posts2 as $post2){
-                      ?>
                       <tr>
                       <td>Supplier</td>
                       <td>:&nbsp;&nbsp;&nbsp;<select class="form-control" name="idSupplier">
-                        <option value="<?php  echo $post2->idSupplier; ?>" <?php if($post2->idSupplier==$post->idSupplier) {echo 'selected';}?>><?php echo $post2->namaSupplier; ?></option>
+                        <option value="<?php  echo $post->idSupplier; ?>" ><?php echo $post->namaSupplier; ?></option>
                       </select></td>
                     </tr>
-                    <?php }?>
                     <tr>
                       <td>Kode Barang </td>
                       <td>:&nbsp;&nbsp;&nbsp;<input value="<?php echo $post->kodeBarang; ?>" type="text" name="kodeBarang"></td>
