@@ -48,22 +48,6 @@ class SalesLaporan
     return $list;
   }
 
-  public static function viewLaporan($filtertahun,$filterbulan){
-    $list = [];
-
-    $db = DB::getInstance();
-
-    $req = $db->query("SELECT db.*, p.* from databarang db join penjualan p
-      on db.idBarang = p.idBarang where year(tanggal) = '$filtertahun' and month(tanggal) = '$filterbulan'");
-      foreach ($req->fetchAll() as $post) {
-        $list[] = new SalesLaporan($post['idBarang'],$post['idPenjualan'],$post['kodeBarang'],$post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['terjual']
-      );
-    }
-
-
-    return $list;
-  }
-
 
   public static function tambahLaporan($idBarang,$tanggal,$terjual){
     $db = DB::getInstance();
@@ -134,7 +118,7 @@ class SalesLaporan
       $terjualsebelum=0;
       $jumlahStokSekarang =0;
       $db = DB::getInstance();
-      $getstok = $db->query("SELECT stok from databarang where idBarang ='$idBarang' group by idBarang");
+      $getstok = $db->query("SELECT stok from databarang where idBarang ='$idBarang'");
       foreach ($getstok->fetchAll() as $r) {
         $jumlah = $r["stok"];
       }

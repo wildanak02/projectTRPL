@@ -119,7 +119,7 @@
               <?php foreach ($posts as $post) {?>
                 <tr>
                   <td><?php echo $post->kodeBarang; ?></td>
-                  <td class="logo_img"><img src="images/<?php echo $post->gambar; ?>"></td>
+                  <td class="logo_img"><img src="images/<?php echo $post->gambar; ?>" height="40" width="40"></td>
                   <td><?php echo $post->namaBarang; ?></td>
                   <td><?php echo $post->jenisBarang; ?></td>
                   <td><?php echo $post->ukuran; ?></td>

@@ -113,35 +113,6 @@
           <div class="widget-content">
             <table class="table table-condensed">
               <a href="?controller=PanelSalesLaporan&action=klikTambah" role="button" class="btn btn-success">Tambah Laporan</a>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <form class="form-control" method="POST">
-                <select class="form-control" name="filterbulan">
-                  <option value="01">Januari</option>
-                  <option value="02">Februari</option>
-                  <option value="03">Maret</option>
-                  <option value="04">April</option>
-                  <option value="05">Mei</option>
-                  <option value="06">Juni</option>
-                  <option value="07">Juli</option>
-                  <option value="08">Agustus</option>
-                  <option value="09">September</option>
-                  <option value="010">Oktober</option>
-                  <option value="011" selected="selected">November</option>
-                  <option value="012">Desember</option>
-                </select>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                  <select class="form-control" name="filtertahun">
-                    <option value="2018">2018</option>
-                    <option value="2017" selected="selected">2017</option>
-                    <option value="2016">2016</option>
-                    <option value="2015">2015</option>
-                    <option value="2014">2014</option>
-                    <option value="2013">2013</option>
-                    <option value="2012">2012</option>
-                  </select>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <input class="btn btn" type="submit" name="submit">
-                  </form>
               <thead>
                 <tr>
                   <th>Kode Barang</th>

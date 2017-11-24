@@ -141,7 +141,7 @@
                     <td><?php echo $post->jenisBarang; ?></td>
                     <td><?php echo $post->ukuran; ?></td>
                     <td><?php echo $post->deskripsi; ?></td>
-                    <td><?php echo $post->stok; ?></td>
+                    <td><?php echo $post->stok; ?> Pcs</td>
                     <td><?php echo $post->namaSupplier; ?></td>
                     <td><a href="?controller=PanelGudang&action=klikEdit&idBarang=<?php echo $post->idBarang
                      ?>&idSupplier=<?php echo $post->idSupplier
