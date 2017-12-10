@@ -6,20 +6,12 @@
 	{
 
 		public function login(){
-			$error='';
 			require_once('view/v_Login.php');
 		}
 
-		public function error(){
-			require_once('views/pages/error.php');
-		}
 		public function authentication(){
-			$error='';
-			if (!isset($_GET['username'])) {
-				//return call('pages','error');
-			}
 			if(Login::find($_GET['username'],$_GET['password'])==0){
-				$error="username atau password  tidak valid";
+				echo "<script type='text/javascript'>alert('Username atau Password Salah');</script>";
 				require_once('view/v_Login.php');
 			}else if(Login::find($_GET['username'],$_GET['password'])==1){
 				$_SESSION['login_user']=$_GET['username'];
@@ -36,11 +28,10 @@
 				$_SESSION['login_user']=$_GET['username'];
 				header("location:index.php?controller=PanelGudang&action=home");
 			}
-			else {
+			elseif(Login::find($_GET['username'],$_GET['password'])==5){
 				$_SESSION['login_user']=$_GET['username'];
 				header("location:index.php?controller=PanelSupplier&action=home");
 			}
-
 		}
 
 }

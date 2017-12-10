@@ -56,7 +56,7 @@ function call($controller, $action){
 	$controller->{ $action }();
 }
 
-$controllers = array('Login' => ['login', 'error','authentication'],
+$controllers = array('Login' => ['login','authentication'],
 	'Home'=>['home'],
 	'PanelAdminUser'=>['home','klikTambah','klikEdit','tambahUser','editUser','hapusUser'],
 	'PanelAdminSupplier'=>['home','klikTambah','klikEdit','tambahSupplier','editSupplier','hapusSupplier'],

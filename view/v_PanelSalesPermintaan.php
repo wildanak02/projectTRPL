@@ -45,6 +45,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="icon-user"></i>
+                  <?php echo $_SESSION['login_user'];?>
                 <b class="caret"></b>
               </a>
 

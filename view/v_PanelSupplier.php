@@ -149,10 +149,10 @@
 
 
 
-<script src="../assets/panel/js/jquery-1.7.2.min.js"></script>
+<script src="assets/panel/js/jquery-1.7.2.min.js"></script>
 
-<script src="../assets/panel/js/bootstrap.js"></script>
-<script src="../assets/panel/js/base.js"></script>
+<script src="assets/panel/js/bootstrap.js"></script>
+<script src="assets/panel/js/base.js"></script>
 
 
 </body>

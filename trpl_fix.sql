@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 Nov 2017 pada 06.55
+-- Generation Time: 10 Des 2017 pada 22.14
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `databarang` (
   `idBarang` int(11) NOT NULL,
   `idSupplier` int(11) NOT NULL,
-  `kodeBarang` int(12) NOT NULL,
-  `gambar` varchar(12) NOT NULL,
+  `kodeBarang` varchar(15) NOT NULL,
+  `gambar` varchar(60) NOT NULL,
   `namaBarang` varchar(21) NOT NULL,
-  `jenisBarang` int(21) NOT NULL,
+  `jenisBarang` int(2) NOT NULL,
   `ukuran` varchar(2) NOT NULL,
   `deskripsi` varchar(50) NOT NULL,
   `stok` int(50) NOT NULL
@@ -43,33 +43,17 @@ CREATE TABLE `databarang` (
 --
 
 INSERT INTO `databarang` (`idBarang`, `idSupplier`, `kodeBarang`, `gambar`, `namaBarang`, `jenisBarang`, `ukuran`, `deskripsi`, `stok`) VALUES
-(1, 1, 101, '', 'Casual', 1, 'M', 'Baju yang keren untuk beramah-tamah', 10),
-(2, 2, 102, '', 'Casual', 1, 'L', 'Baju yang keren untuk beramah-tamah', 100),
-(3, 18, 103, '', 'Casual', 1, 'XL', 'Baju yang keren untuk beramah-tamahs', 0),
-(4, 19, 104, '', 'Klasik', 1, 'M', 'Sangat cocok digunakan dalam mode santai', 10),
-(5, 20, 105, '', 'Klasik', 1, 'L', 'Sangat cocok digunakan dalam mode santai', 10),
-(6, 1, 106, '', 'Klasik', 1, 'XL', 'Sangat cocok digunakan dalam mode santai', 10),
-(7, 2, 107, '', 'Modis', 1, 'M', 'Sangat cocok digunakan dalam mode apa aja', 10),
-(8, 18, 108, '', 'Modis', 1, 'L', 'Sangat cocok digunakan dalam mode apa aja', 10),
-(9, 19, 109, '', 'Modis', 1, 'XL', 'Sangat cocok digunakan dalam mode apa aja', 10),
-(10, 20, 201, '', 'Rabbani', 2, 'M', 'Varian baju yang beragam untuk dipakai', 10),
-(11, 0, 202, '', 'Rabbani', 2, 'L', 'Varian baju yang beragam untuk dipakai', 10),
-(12, 0, 203, '', 'Rabbani', 2, 'XL', 'Varian baju yang beragam untuk dipakai', 10),
-(13, 0, 204, '', 'Zoya', 2, 'M', 'Varian baju yang beragam untuk dipakai bersama', 10),
-(14, 0, 205, '', 'Zoya', 2, 'L', 'Varian baju yang beragam untuk dipakai bersama', 10),
-(15, 0, 206, '', 'Zoya', 2, 'XL', 'Varian baju yang beragam untuk dipakai bersama', 10),
-(16, 0, 207, '', 'Elzatta', 2, 'M', 'Varian baju yang beragam', 10),
-(17, 0, 208, '', 'Elzatta', 2, 'L', 'Varian baju yang beragam', 10),
-(18, 0, 209, '', 'Elzatta', 2, 'XL', 'Varian baju yang beragam', 10),
-(19, 0, 301, '', 'Shafira', 3, 'M', 'anak-anak sangat suka variasi warna yang beragam', 10),
-(20, 0, 302, '', 'Shafira', 3, 'L', 'anak-anak sangat suka variasi warna yang beragam', 10),
-(21, 0, 303, '', 'Shafira', 3, 'XL', 'anak-anak sangat suka variasi warna yang beragam', 10),
-(22, 0, 304, '', 'Meccanism', 3, 'M', 'anak-anak sangat suka variasi warna nya', 10),
-(23, 0, 305, '', 'Meccanism', 3, 'L', 'anak-anak sangat suka variasi warna nya', 10),
-(24, 0, 306, '', 'Meccanism', 3, 'XL', 'anak-anak sangat suka variasi warna nya', 10),
-(25, 0, 307, '', 'Dian Pelangi', 3, 'M', 'anak-anak sangat suka variasi warna nya', 10),
-(26, 0, 308, '', 'Dian Pelangi', 3, 'L', 'anak-anak sangat suka variasi warna nya', 10),
-(27, 0, 309, '', 'Dian Pelangi', 3, 'XL', 'anak-anak sangat suka variasi warna nya', 10);
+(1, 1, 'BMP1', 'muslimpria1.jpg', 'Muslim Keren', 1, 'L', 'Baju ini dibuat dengan ahli jahit dengan menggunak', -370),
+(2, 1, 'BMP2', 'muslimpria1.jpg', 'Muslim Keren', 1, 'M', 'Baju ini dibuat dengan ahli jahit dengan menggunak', 20),
+(3, 1, 'BMP3', 'muslimpria1.jpg', 'Muslim Keren', 1, 'XL', 'Baju ini dibuat dengan ahli jahit dengan menggunak', 30),
+(4, 1, 'BMP4', 'muslimpria1.jpg', 'Muslim Keren', 1, 'S', 'Baju ini dibuat dengan ahli jahit dengan menggunak', 30),
+(5, 2, 'BMW1', 'muslimwanita.jpg', 'Muslim Keren Wanita', 2, 'L', 'Baju Muslim keren kekinian jaman now', 70),
+(6, 2, 'BMW2', 'muslimwanita.jpg', 'Muslim Keren Wanita', 2, 'XL', 'Baju Muslim keren kekinian jaman now', 60),
+(7, 2, 'BMW3', 'muslimwanita.jpg', 'Muslim Keren Wanita', 2, 'M', 'Baju Muslim keren kekinian jaman now', 80),
+(8, 2, 'BMW4', 'muslimwanita.jpg', 'Muslim Keren Wanita', 2, 'S', 'Baju Muslim keren kekinian jaman now', 54),
+(9, 3, 'BMA1', 'muslimanak.jpg', 'Muslim Anak Kece Beud', 3, 'M', 'Busana Muslim untuk anak mengaji', 30),
+(10, 3, 'BMA2', 'muslimanak.jpg', 'Muslim Anak Kece Beud', 3, 'XL', 'Busana Muslim untuk anak mengaji', 10),
+(11, 3, 'BMA3', 'muslimanak.jpg', 'Muslim Anak Kece Beud', 3, 'L', 'Busana Muslim untuk anak mengaji', 60);
 
 -- --------------------------------------------------------
 
@@ -79,7 +63,7 @@ INSERT INTO `databarang` (`idBarang`, `idSupplier`, `kodeBarang`, `gambar`, `nam
 
 CREATE TABLE `karyawan` (
   `idKaryawan` int(11) NOT NULL,
-  `namaKaryawan` varchar(12) NOT NULL,
+  `namaKaryawan` varchar(50) NOT NULL,
   `jenisKelamin` int(12) NOT NULL,
   `tanggalLahir` date NOT NULL,
   `jabatan` int(12) NOT NULL
@@ -90,46 +74,7 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`idKaryawan`, `namaKaryawan`, `jenisKelamin`, `tanggalLahir`, `jabatan`) VALUES
-(1, 'Beya Aji', 1, '2017-02-21', 1),
-(2, 'Ach. Wildan', 1, '2017-02-08', 2),
-(3, 'Basirudin', 1, '2017-11-07', 3),
-(4, 'Faqih', 1, '2017-11-01', 4),
-(5, 'Ridho', 1, '2017-11-11', 5),
-(6, 'Ameera', 2, '2017-11-08', 6),
-(7, 'Alysha', 2, '2017-10-19', 7),
-(8, 'Menthul', 2, '2017-11-02', 8);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data untuk tabel `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+(2, 'Achmad WIldan Akbar', 1, '2017-11-24', 1);
 
 -- --------------------------------------------------------
 
@@ -149,8 +94,20 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`idPenjualan`, `idBarang`, `tanggal`, `terjual`) VALUES
-(1, 2, '2017-11-11', 10),
-(2, 3, '2017-11-01', 10);
+(1, 1, '2017-01-02', 20),
+(2, 1, '2017-02-02', 20),
+(3, 1, '2017-03-09', 30),
+(4, 1, '2017-04-14', 40),
+(5, 1, '2017-05-20', 40),
+(6, 1, '2017-06-09', 20),
+(7, 1, '2017-07-14', 30),
+(8, 1, '2017-08-03', 20),
+(9, 1, '2017-09-25', 20),
+(10, 1, '2017-10-25', 20),
+(11, 1, '2017-11-10', 30),
+(12, 1, '2017-12-22', 30),
+(13, 1, '2018-01-13', 30),
+(14, 1, '2018-02-08', 20);
 
 -- --------------------------------------------------------
 
@@ -160,19 +117,28 @@ INSERT INTO `penjualan` (`idPenjualan`, `idBarang`, `tanggal`, `terjual`) VALUES
 
 CREATE TABLE `permintaan` (
   `idPermintaan` int(11) NOT NULL,
-  `idBarang` int(11) NOT NULL,
+  `kodeBarang` varchar(15) NOT NULL,
   `idSupplier` int(11) NOT NULL,
-  `idPenjualan` int(11) NOT NULL,
-  `permintaan` int(2) NOT NULL,
-  `status` int(2) NOT NULL
+  `permintaan` int(11) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `permintaan`
 --
 
-INSERT INTO `permintaan` (`idPermintaan`, `idBarang`, `idSupplier`, `idPenjualan`, `permintaan`, `status`) VALUES
-(1, 1, 16, 1, 0, 1);
+INSERT INTO `permintaan` (`idPermintaan`, `kodeBarang`, `idSupplier`, `permintaan`, `status`) VALUES
+(1, 'BMP1', 1, 0, 0),
+(2, 'BMP2', 1, 0, 0),
+(3, 'BMP3', 1, 0, 0),
+(4, 'BMP4', 1, 0, 0),
+(5, 'BMW1', 2, 0, 0),
+(6, 'BMW2', 2, 0, 0),
+(7, 'BMW3', 2, 0, 0),
+(8, 'BMW4', 2, 0, 0),
+(9, 'BMA1', 3, 0, 0),
+(10, 'BMA2', 3, 0, 0),
+(11, 'BMA3', 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -182,10 +148,17 @@ INSERT INTO `permintaan` (`idPermintaan`, `idBarang`, `idSupplier`, `idPenjualan
 
 CREATE TABLE `prediksi` (
   `idPrediksi` int(11) NOT NULL,
-  `idPenjualan` int(12) NOT NULL,
+  `idBarang` int(11) NOT NULL,
   `totalTerjual` int(50) NOT NULL,
   `prediksi` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `prediksi`
+--
+
+INSERT INTO `prediksi` (`idPrediksi`, `idBarang`, `totalTerjual`, `prediksi`) VALUES
+(1, 1, 350, 35);
 
 -- --------------------------------------------------------
 
@@ -195,8 +168,8 @@ CREATE TABLE `prediksi` (
 
 CREATE TABLE `supplier` (
   `idSupplier` int(11) NOT NULL,
-  `idUser` int(12) NOT NULL,
-  `namaSupplier` varchar(12) NOT NULL,
+  `level` int(12) NOT NULL,
+  `namaSupplier` varchar(50) NOT NULL,
   `alamat` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -204,14 +177,12 @@ CREATE TABLE `supplier` (
 -- Dumping data untuk tabel `supplier`
 --
 
-INSERT INTO `supplier` (`idSupplier`, `idUser`, `namaSupplier`, `alamat`) VALUES
-(1, 5, 'feril', 'perum taman kampus C3-1'),
-(2, 5, 'Bima', 'Perum GGM blok f.32'),
-(18, 5, 'Thariq', 'Perum Kalimantan 31'),
-(19, 5, 'Abbi', 'Jl.Jawa 7 no 149'),
-(20, 5, 'Juven', 'jl.Mastrip 41'),
-(22, 5, 'gilang', 'jl.gilang'),
-(23, 5, 'aye', 'aye');
+INSERT INTO `supplier` (`idSupplier`, `level`, `namaSupplier`, `alamat`) VALUES
+(1, 5, 'beya', 'jl.Jatinegoro'),
+(2, 5, 'wildan', 'jl.kenangan'),
+(3, 5, 'feril', 'jl.Kalipuro'),
+(4, 5, 'thoriq', 'sumberjambe'),
+(5, 5, 'bima', 'banyuwangi');
 
 -- --------------------------------------------------------
 
@@ -223,7 +194,7 @@ CREATE TABLE `user` (
   `idUser` int(11) NOT NULL,
   `username` varchar(12) NOT NULL,
   `password` varchar(12) NOT NULL,
-  `avatar` varchar(12) NOT NULL,
+  `avatar` varchar(60) NOT NULL,
   `level` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -233,10 +204,14 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`idUser`, `username`, `password`, `avatar`, `level`) VALUES
 (1, 'admin', 'admin', '', 1),
-(2, 'hrd', 'hrd', '', 2),
-(3, 'sales', 'sales', '', 3),
-(4, 'gudang', 'gudang', '', 4),
-(5, 'supplier', 'supplier', '', 5);
+(2, 'hrd', 'hrd', 'teacher-1.png', 2),
+(3, 'sales', 'sales', 'girl-1.png', 3),
+(4, 'gudang', 'gudang', 'man.png', 4),
+(5, 'beya', 'beya', 'boy.png', 5),
+(6, 'wildan', 'wildan', 'boy-1.png', 5),
+(7, 'feril', 'feril', 'man-1.png', 5),
+(8, 'thoriq', 'thoriq', 'scientist.png', 5),
+(9, 'bima', 'bima', 'student.png', 5);
 
 --
 -- Indexes for dumped tables
@@ -255,44 +230,28 @@ ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`idKaryawan`);
 
 --
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
-
---
 -- Indexes for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  ADD PRIMARY KEY (`idPenjualan`),
-  ADD UNIQUE KEY `idBarang` (`idBarang`);
+  ADD PRIMARY KEY (`idPenjualan`);
 
 --
 -- Indexes for table `permintaan`
 --
 ALTER TABLE `permintaan`
-  ADD PRIMARY KEY (`idPermintaan`),
-  ADD UNIQUE KEY `idBarang` (`idBarang`,`idSupplier`,`idPenjualan`);
+  ADD PRIMARY KEY (`idPermintaan`);
 
 --
 -- Indexes for table `prediksi`
 --
 ALTER TABLE `prediksi`
-  ADD PRIMARY KEY (`idPrediksi`),
-  ADD UNIQUE KEY `idPenjualan` (`idPenjualan`);
+  ADD PRIMARY KEY (`idPrediksi`);
 
 --
 -- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`idSupplier`),
-  ADD UNIQUE KEY `idSupplier` (`idSupplier`);
+  ADD PRIMARY KEY (`idSupplier`);
 
 --
 -- Indexes for table `user`
@@ -308,42 +267,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `databarang`
 --
 ALTER TABLE `databarang`
-  MODIFY `idBarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idBarang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `idKaryawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idKaryawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `idPenjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idPenjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `permintaan`
 --
 ALTER TABLE `permintaan`
-  MODIFY `idPermintaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idPermintaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `prediksi`
 --
 ALTER TABLE `prediksi`
-  MODIFY `idPrediksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPrediksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `idSupplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idSupplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

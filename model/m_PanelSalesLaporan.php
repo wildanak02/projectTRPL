@@ -61,35 +61,40 @@ class SalesLaporan
 
     public static function tambahLaporan3($idBarang,$terjual){
       $total=0;
-      $prediksi=0;
-      $alpha=0.9;
-      $st=0;
-      $s2t=0;
-      $at=0;
-      $bt=0;
-      $i;
-      $periode=12;
+      $alpha=0.4;
 
       $db = DB::getInstance();
-      $req2 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang'");
-
+      $sel1 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang' group by idBarang, Month(tanggal) order by Month(tanggal) desc
+      limit 1,1");
+      $sel2 = $db->query("SELECT terjual from penjualan where idBarang ='$idBarang' group by idBarang, Month(tanggal) order by Month(tanggal) desc
+      limit 2,3");
+      $sel3 = $db->query("SELECT count(terjual) as cterjual from penjualan where idBarang ='$idBarang'");
+      $req3 = $db->query("SELECT SUM(terjual) as tj from penjualan where idBarang ='$idBarang'");
       //hitung periode
-      foreach ($req2->fetchAll() as $g) {
-        $i = count($g["terjual"]);
+      foreach ($sel3->fetchAll() as $c) {
+        $i = $c["cterjual"];
       }
 
       //hitung total
-      $req3 = $db->query("SELECT SUM(terjual) as tj from penjualan where idBarang ='$idBarang'");
       foreach ($req3->fetchAll() as $s) {
         $total =$s["tj"];
       }
+      //select terjual
+      foreach ($sel1->fetchAll() as $a) {
+        $penjualanKemarin = count($a["terjual"]);
+      }
+      foreach ($sel2->fetchAll() as $b) {
+        $penjualanKemarinLusa = count($b["terjual"]);
+      }
+          $st2=$alpha*$penjualanKemarin+(1-$alpha)*$penjualanKemarinLusa;
+          $s2t2=$alpha*$st2+(1-$alpha)*$penjualanKemarin;
 
-          $st=$alpha*$terjual+(1-$alpha)*$st;
-          $s2t=$alpha*$st+(1-$alpha)*$s2t;
+          $st=$alpha*$terjual+(1-$alpha)*$st2;
+          $s2t=$alpha*$st+(1-$alpha)*$s2t2;
           $at=2*$st+$s2t;
           $bt=$alpha/(1-$alpha)*($st-$s2t);
 
-      if ($i>=periode) {
+      if (($i%13)==0) {
         $prediksi=$at+$bt;
 
         $req = $db->query("INSERT INTO prediksi

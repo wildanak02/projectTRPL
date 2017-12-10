@@ -34,8 +34,8 @@ class Supplier
 
     $sesi=$_SESSION['login_user'];
 
-    $req = $db->query("SELECT db.idBarang, s.idSupplier,db.kodeBarang,db.gambar,db.namaBarang,db.jenisBarang,db.ukuran,pr.idPermintaan,
-    pr.permintaan,p.idPrediksi, p.prediksi from supplier s join databarang db on s.idSupplier=db.idSupplier join prediksi p on db.idBarang=p.idBarang join permintaan pr on db.kodeBarang=pr.kodeBarang where s.namaSupplier='$sesi' and pr.permintaan=1 and status=0");
+    $req = $db->query("SELECT db.*,s.*,p.*,pr.* from supplier s join databarang db on s.idSupplier=db.idSupplier join prediksi p
+      on db.idBarang=p.idBarang join permintaan pr on db.kodeBarang=pr.kodeBarang where s.namaSupplier='$sesi' and pr.permintaan=1 and pr.status=0");
       foreach ($req->fetchAll() as $post) {
         $list[] = new Supplier($post['idBarang'],$post['idPrediksi'],$post['kodeBarang'],
         $post['gambar'],$post['namaBarang'],$post['jenisBarang'],$post['ukuran'],$post['prediksi']
